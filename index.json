@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "title": "Studio Nomad Blog",
+    "description": "AI architecture workflow guides, prompt libraries, and rendering techniques",
+    "url": "https://studionomad.vercel.app",
+    "repo": "https://github.com/hktreasure926/arch-prompt-db",
+    "workflow": "Draft → Review → Approve → Publish"
+  },
+  "drafts": [],
+  "published": [
+    {
+      "slug": "20min-competition-entry",
+      "title": "How to Make a Winning Architectural Competition Entry in 20 Minutes (Using Only Your Phone)",
+      "date": "2026-04-24",
+      "status": "published",
+      "tags": ["competition", "mobile-workflow", "nano-banana"],
+      "excerpt": "A battle-tested framework for creating competition-worthy architectural submissions in under 20 minutes using only a smartphone and AI image generators.",
+      "file": "posts/20min-competition-entry.md",
+      "ai-summary": "Step-by-step guide for architects to create competition entries quickly using mobile AI tools, covering concept generation, image creation, and presentation layout."
+    },
+    {
+      "slug": "bionic-architecture-ai-workflow",
+      "title": "How to Use AI for Bionic Architecture: From Nature to Built Form",
+      "date": "2026-04-23",
+      "status": "published",
+      "tags": ["bionic-architecture", "concept-board", "parametric", "s11-s12"],
+      "excerpt": "A complete workflow for transforming natural forms into architectural concepts using AI image generation. From succulent rosette to urban public building.",
+      "file": "posts/bionic-architecture-ai-workflow.md",
+      "ai-summary": "Step-by-step guide on using AI tools to generate bionic architecture concept boards, covering inspiration analysis, parametric evolution, and material detailing."
+    },
+    {
+      "slug": "ai-rendering-tools-2026-comparison",
+      "title": "AI Rendering Tools for Architects in 2026: Complete Comparison",
+      "date": "2026-04-23",
+      "status": "published",
+      "tags": ["nano-banana", "d5-render", "midjourney-v7", "stable-diffusion", "rendering"],
+      "excerpt": "Compare Nano Banana Pro, D5 Render, Midjourney v7, and Stable Diffusion for architectural visualization.",
+      "file": "posts/ai-rendering-tools-2026-comparison.md",
+      "ai-summary": "A detailed comparison of 4 AI rendering tools for architects, covering speed, cost, quality, and workflow integration."
+    },
+    {
+      "slug": "15-urban-schemes",
+      "title": "15 Urban Waterfront Site Transformation Prompts for Studio Nomad",
+      "date": "2026-04-21",
+      "status": "published",
+      "tags": ["urban-design", "waterfront", "prompt-library", "s11-s12"],
+      "excerpt": "Transform any city center waterfront site with these 15 ready-to-use Studio Nomad prompt templates.",
+      "file": "posts/15-urban-schemes.md",
+      "ai-summary": "15 prompt templates for urban waterfront site transformation using Studio Nomad's S11+S12 framework."
+    },
+    {
+      "slug": "s11-s12-framework",
+      "title": "S11 + S12 Prompt Framework: How We Structure Architectural AI Prompts",
+      "date": "2026-04-15",
+      "status": "published",
+      "tags": ["s11-s12", "prompt-engineering", "framework", "nano-banana"],
+      "excerpt": "The S11+S12 framework separates Subject from Style for consistent architectural AI outputs.",
+      "file": "posts/s11-s12-framework.md",
+      "ai-summary": "Explains the S11+S12 prompt framework used in Studio Nomad for architectural AI generation."
+    }
+  ]
+}
