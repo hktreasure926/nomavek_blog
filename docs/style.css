@@ -195,7 +195,7 @@ a {
 .visual-panel img {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
@@ -531,8 +531,33 @@ a {
     padding: clamp(36px, 6vw, 64px) 0 72px;
 }
 
+.article-intro {
+    margin-top: 28px;
+}
+
+.article-intro.portrait {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 330px);
+    gap: 24px;
+    align-items: start;
+}
+
+.article-intro.landscape {
+    display: grid;
+    gap: 22px;
+}
+
+.article-intro.portrait .visual-panel {
+    box-shadow: 0 16px 44px rgba(38, 33, 27, 0.09);
+}
+
+.article-intro.portrait .visual-panel img {
+    aspect-ratio: 9 / 16;
+    max-height: 460px;
+}
+
 .article-quick {
-    margin: 30px 0;
+    margin: 0;
     padding: 24px;
     border-left: 4px solid var(--accent);
     background: var(--paper);
@@ -548,8 +573,8 @@ a {
 }
 
 .article-body h2 {
-    margin-top: 42px;
-    font-size: clamp(28px, 3vw, 42px);
+    margin-top: 34px;
+    font-size: clamp(21px, 2.25vw, 32px);
 }
 
 .article-body h2:first-child {
@@ -617,6 +642,7 @@ a {
     .featured-card,
     .section-title,
     .field-layout,
+    .article-intro.portrait,
     .cta-panel {
         grid-template-columns: 1fr;
     }
@@ -628,6 +654,11 @@ a {
 
     .featured-media {
         min-height: 260px;
+    }
+
+    .article-intro.portrait .visual-panel img {
+        aspect-ratio: 16 / 9;
+        max-height: none;
     }
 
     .cta-note {
