@@ -5,7 +5,6 @@ const articles = [
         date: "2026-05-14",
         status: "Draft for review",
         category: "Workflow Guides",
-        readTime: "6 min",
         tags: ["AI Workflow", "Architecture Practice", "AEO"],
         excerpt: "Prompts are fragile. Contracts are durable. Here is a practical way to brief AI so your studio gets consistent outputs across a project.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
@@ -34,7 +33,6 @@ const articles = [
         date: "2026-04-24",
         status: "Draft for review",
         category: "AI Practice",
-        readTime: "8 min",
         tags: ["Agentic AI", "Automation", "AEO"],
         excerpt: "A practical guide for design firms on agentic systems, multi-step workflows, and where human judgment still matters.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-render.png",
@@ -54,7 +52,6 @@ const articles = [
         date: "2026-04-23",
         status: "Published archive",
         category: "AI Design Tools",
-        readTime: "7 min",
         tags: ["Rendering", "Tool Comparison"],
         excerpt: "A comparison of rendering tools for architects, framed around speed, cost, visual control, and workflow fit.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-houses.png",
@@ -72,7 +69,6 @@ const articles = [
         date: "2026-04-24",
         status: "Published archive",
         category: "Competitions",
-        readTime: "6 min",
         tags: ["Competition", "Mobile Workflow"],
         excerpt: "A fast framework for turning one idea into a legible competition board using mobile AI tools.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
@@ -83,6 +79,27 @@ const articles = [
             { type: "h2", text: "Nomavek Takeaway" },
             { type: "p", text: "The board is a thinking tool. It should make the next design decision easier." }
         ]
+    }
+];
+
+const fieldNotes = [
+    {
+        meta: "Instagram seed / May 5, 2026",
+        title: "For freelancer architects and small studios",
+        text: "The first bridge from the Nomavek Instagram post: start with one project image, one design question, and one board instead of chasing another prompt trick.",
+        href: "https://www.instagram.com/p/DX9ooGUFIMG/",
+        linkText: "View seed post",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
+        alt: "Sketch image candidate for small studio AI workflow note"
+    },
+    {
+        meta: "Next field note / Draft",
+        title: "What small studios should ask before adopting AI tools",
+        text: "Does the tool help you decide, or only help you generate? That question should shape the blog, Instagram, and QuickFix offer.",
+        href: "#article/ai-contracts-beat-prompts",
+        linkText: "Read the draft direction",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
+        alt: "Facade detail image candidate for AI adoption field note"
     }
 ];
 
@@ -103,36 +120,21 @@ function renderHome() {
         <div class="page-shell">
             <section class="hero" id="home">
                 <div class="hero-copy">
-                    <h1>AI Architecture Briefing</h1>
-                    <p class="hero-summary">A practical journal for architecture teams tracking how AI tools change design decisions, visualization, client presentation, and studio workflows.</p>
+                    <h1>Nomavek Blog</h1>
+                    <p class="hero-summary">Practical notes on AI tools, architectural design work, visualization, client presentation, and small studio workflows.</p>
                     <div class="hero-actions">
-                        <a class="button" href="#article/${featured.slug}">Read featured briefing</a>
+                        <a class="button" href="#latest-blog">View latest blog</a>
                         <a class="button secondary" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
                     </div>
                 </div>
-                <aside class="visual-panel" aria-label="Nomavek visual workflow preview">
-                    <img src="https://www.nomavek.com/landing/nomavek-east-asia-render.png" alt="Nomavek architectural render preview">
-                    <div class="signal-strip" aria-label="Workflow signals">
-                        <span>Read the image</span>
-                        <span>Compare options</span>
-                        <span>Prepare the board</span>
-                    </div>
-                </aside>
             </section>
 
-            <section class="section" aria-labelledby="featured-title">
+            <section class="section latest-section" id="latest-blog" aria-labelledby="latest-title">
                 <div class="section-title">
-                    <h2 id="featured-title">Featured briefing</h2>
-                    <p>The blog should give a useful answer first, then connect that insight back to architectural workflow decisions.</p>
+                    <h2 id="latest-title">Latest blog</h2>
+                    <p>Useful AI and architecture notes first, with a practical link back to project workflow when relevant.</p>
                 </div>
                 ${renderFeatured(featured)}
-            </section>
-
-            <section class="section" aria-labelledby="latest-title">
-                <div class="section-title">
-                    <h2 id="latest-title">Latest briefings</h2>
-                    <p>Broader AI architecture signals, not only product updates or prompt libraries.</p>
-                </div>
                 <div class="article-grid">
                     ${articles.slice(1).map(renderCard).join("")}
                 </div>
@@ -154,25 +156,14 @@ function renderHome() {
                     <p>Shorter ideas that can become Instagram posts, carousels, or deeper articles.</p>
                 </div>
                 <div class="field-layout">
-                    <article class="field-note">
-                        <div class="meta">Instagram seed / May 5, 2026</div>
-                        <h3>For freelancer architects and small studios</h3>
-                        <p>The first bridge from the Nomavek Instagram post: start with one project image, one design question, and one board instead of chasing another prompt trick.</p>
-                        <a class="text-link" href="https://www.instagram.com/p/DX9ooGUFIMG/">View seed post</a>
-                    </article>
-                    <article class="field-note">
-                        <div class="meta">Next field note</div>
-                        <h3>What small studios should ask before adopting AI tools</h3>
-                        <p>Does the tool help you decide, or only help you generate? That question should shape the blog, Instagram, and QuickFix offer.</p>
-                        <a class="text-link" href="#article/ai-contracts-beat-prompts">Read the draft direction</a>
-                    </article>
+                    ${fieldNotes.map(renderFieldNote).join("")}
                 </div>
             </section>
 
             <section class="cta-panel" aria-label="Nomavek call to action">
                 <div>
                     <h2>Have a sketch, render, or design question?</h2>
-                    <p>Turn it into visual options, rationale, and a client-ready board. The journal explains the shift; Nomavek turns the shift into a working decision process.</p>
+                    <p>Turn it into visual options, rationale, and a client-ready board. The blog explains the shift; Nomavek turns the shift into a working decision process.</p>
                     <div class="cta-actions">
                         <a class="button" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
                         <a class="button secondary" href="https://www.nomavek.com/">Visit Nomavek Lab</a>
@@ -182,7 +173,7 @@ function renderHome() {
             </section>
 
             <footer class="site-footer">
-                Nomavek Journal. AI architecture briefings for small studios and design teams.
+                Nomavek Blog. AI architecture notes for small studios and design teams.
             </footer>
         </div>
     `;
@@ -191,14 +182,12 @@ function renderHome() {
 function renderFeatured(article) {
     return `
         <article class="featured-card">
-            <div class="featured-media">
-                <img src="${article.image}" alt="Architectural visual for ${article.title}">
-            </div>
+            ${renderImage(article.image, `Architectural image candidate for ${article.title}`, "featured-media")}
             <div class="featured-copy">
-                <div class="meta">${article.category} / ${article.date} / ${article.readTime}</div>
+                ${renderMeta(article)}
                 <h3>${article.title}</h3>
                 <p>${article.excerpt}</p>
-                <a class="text-link" href="#article/${article.slug}">Open article view</a>
+                <a class="text-link" href="#article/${article.slug}">Open blog post</a>
             </div>
         </article>
     `;
@@ -207,10 +196,11 @@ function renderFeatured(article) {
 function renderCard(article) {
     return `
         <article class="article-card">
-            <div class="meta">${article.category} / ${article.readTime}</div>
+            ${renderImage(article.image, `Image candidate for ${article.title}`, "card-image-wrap")}
+            ${renderMeta(article)}
             <h3>${article.title}</h3>
             <p>${article.excerpt}</p>
-            <a class="text-link" href="#article/${article.slug}">Read briefing</a>
+            <a class="text-link" href="#article/${article.slug}">Read blog</a>
         </article>
     `;
 }
@@ -219,20 +209,17 @@ function renderArticle(slug) {
     const article = articles.find((item) => item.slug === slug) || articles[0];
     app.innerHTML = `
         <article class="article-view">
-            <a class="text-link back-link" href="#home">Back to journal</a>
-            <div class="meta">${article.category} / ${article.date} / ${article.readTime}</div>
+            <a class="text-link back-link" href="#home">Back to blog</a>
+            ${renderMeta(article)}
             <h1>${article.title}</h1>
             <div class="article-actions">
                 <span class="status-note">${article.status}</span>
-                ${article.tags.map((tag) => `<span class="status-note">${tag}</span>`).join("")}
             </div>
             <section class="article-quick">
                 <strong>Quick Answer</strong>
                 <p>${article.quickAnswer}</p>
             </section>
-            <div class="visual-panel">
-                <img src="${article.image}" alt="Architectural visual for ${article.title}">
-            </div>
+            ${renderImage(article.image, `Architectural image candidate for ${article.title}`, "visual-panel")}
             <section class="article-body">
                 ${article.body.map(renderBlock).join("")}
             </section>
@@ -242,13 +229,52 @@ function renderArticle(slug) {
                     <p>Nomavek connects the article insight back to a practical decision workflow: one image, one brief, visual options, and a board.</p>
                     <div class="cta-actions">
                         <a class="button" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
-                        <a class="button secondary" href="#home">Read more briefings</a>
+                        <a class="button secondary" href="#home">Read more blog</a>
                     </div>
                 </div>
                 <div class="cta-note">This review page does not publish the draft article to production.</div>
             </section>
         </article>
     `;
+}
+
+function renderFieldNote(note) {
+    return `
+        <article class="field-note">
+            ${renderImage(note.image, note.alt, "field-image-wrap")}
+            <div class="meta">${note.meta}</div>
+            <h3>${note.title}</h3>
+            <p>${note.text}</p>
+            <a class="text-link" href="${note.href}">${note.linkText}</a>
+        </article>
+    `;
+}
+
+function renderMeta(article) {
+    return `
+        <div class="blog-meta">
+            <span>${formatDate(article.date)}</span>
+            <span>${article.category}</span>
+            ${article.tags.slice(0, 3).map((tag) => `<span>${tag}</span>`).join("")}
+        </div>
+    `;
+}
+
+function renderImage(src, alt, className) {
+    return `
+        <figure class="image-frame ${className}">
+            <img src="${src}" alt="${alt}">
+            <figcaption class="image-status">Image pending approval</figcaption>
+        </figure>
+    `;
+}
+
+function formatDate(dateString) {
+    return new Intl.DateTimeFormat("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+    }).format(new Date(`${dateString}T00:00:00`));
 }
 
 function renderBlock(block) {

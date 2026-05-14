@@ -11,13 +11,13 @@ Status: approval needed before implementation or public publishing
 - Existing article links point to GitHub markdown files instead of a reader-friendly blog article page.
 - The linked Instagram seed post is from `@nomavek.lab`, dated May 5, 2026, with the caption: `Let's talk if you are freelancer architect or with small studio!`
 
-## Recommended Blog Identity
+## Current Blog Identity
 
-Name: Nomavek Journal
+Name: Nomavek Blog
 
 Positioning:
 
-> AI architecture briefings for design studios tracking how new tools change design decisions, visualization, client presentation, and practice workflows.
+> Practical AI and architecture blog posts for design studios tracking how new tools change design decisions, visualization, client presentation, and practice workflows.
 
 Primary reader:
 
@@ -32,18 +32,18 @@ Primary reader:
 ```text
 blog.nomavek.com
 ────────────────────────────────────────
-Nomavek Journal                         Nomavek Lab / Topics / Start Board
+Nomavek Blog                            Latest Blog / Field Notes / Start Board
 
-AI Architecture Briefing
-Short practical signal on AI tools, design workflows, and architectural practice.
+Nomavek Blog
+Compact intro on AI tools, design workflows, and architectural practice.
 
-[Featured Briefing]
-Large editorial article card:
+[Featured Blog Post]
+Compact article card with image:
 Title
 2-line answer
-Topic / date / reading time
+Date / category / tags
 
-Latest Briefings
+Latest Blog
 [Article] [Article] [Article]
 
 Topics
@@ -68,7 +68,7 @@ Turn it into visual options, rationale, and a client-ready board.
 
 ```text
 Article title
-Date / category / reading time
+Date / category / tags
 
 Quick Answer
 Direct 3-5 sentence answer for AEO.
@@ -89,16 +89,18 @@ FAQ
 Short Q&A blocks for answer engines.
 
 CTA
-[Start QuickFix Board] [Read more briefings]
+[Start QuickFix Board] [Read more blog]
 ```
 
 ## Visual Direction
 
 - Quiet editorial layout, not a SaaS marketing page.
 - Keep Nomavek Lab's architectural tone: warm paper background, restrained ink, muted accent.
-- Use real architectural visuals, approved demo images, or approved generated images only.
+- Every blog block that uses an image must show an approved image, or a visible pending-approval label during review.
+- Use real architectural visuals, approved demo images, approved internet-sourced images, or approved generated images only.
 - Avoid decorative gradient blobs, oversized marketing cards, or too much single-color beige.
 - Keep article cards compact and scannable.
+- Keep the top of the blog compact; do not use a large landing-page hero.
 - Mobile should read like a clean publication, not a dashboard.
 
 ## Content Taxonomy
@@ -135,23 +137,24 @@ CTA copy:
 - Drafts can be prepared automatically.
 - Public blog publishing needs user approval.
 - Public Instagram posting needs user approval.
-- AI-generated article images or demo images need user approval before use.
+- Any public image needs user approval before use, including AI-generated images, internet-sourced images, demo images, and Nomavek-owned visual assets.
 - Website deployment/public changes need approval.
 
 ## First Implementation Scope After Approval
 
 1. Fix `blog.nomavek.com` so the root serves the HTML blog page, not `index.csv`.
-2. Rebrand visible blog UI from `Studio Nomad Blog` to `Nomavek Journal`.
-3. Update metadata to `Nomavek Journal`.
-4. Add editorial homepage sections: Featured Briefing, Latest Briefings, Topics, Field Notes, Nomavek Bridge.
+2. Rebrand visible blog UI from `Studio Nomad Blog` to `Nomavek Blog`.
+3. Update metadata to `Nomavek Blog`.
+4. Add compact blog homepage sections: Featured Blog Post, Latest Blog, Topics, Field Notes, Nomavek Bridge.
 5. Change article links away from GitHub markdown links toward local reader-friendly article pages or a simple static article viewer.
 6. Update index metadata and categories for broader AI architecture AEO.
 7. Keep all posts as drafts unless user approves publication.
+8. Keep image usage approval-gated with a simple approval register.
 
 ## First Three Draft Topics
 
 1. `What Is Agentic AI in Architecture? A Practical Guide for Design Firms`
-   - Existing draft can be adapted to the new Nomavek Journal style.
+   - Existing draft can be adapted to the new Nomavek Blog style.
 2. `AI Rendering Is Getting Cheaper. The Value Is Moving To Design Decisions.`
    - Strong bridge from market news to Nomavek's decision-board offer.
 3. `How Small Architecture Studios Should Track AI Tool Changes Without Chasing Every Tool`
@@ -172,8 +175,8 @@ Instagram: Let's talk if you are freelancer architect or with small studio!
 
 Please approve or revise:
 
-1. Blog name: `Nomavek Journal`
-2. Homepage structure above
+1. Blog name: `Nomavek Blog`
+2. Compact blog homepage structure above
 3. Article page structure above
 4. Topic taxonomy
 5. First implementation scope
