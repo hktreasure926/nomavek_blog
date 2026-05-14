@@ -9,6 +9,7 @@ const articles = [
         imageApproved: true,
         excerpt: "Prompts are fragile. Contracts are durable. Here is a practical way to brief AI so your studio gets consistent outputs across a project.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
+        imageLayout: "portrait",
         quickAnswer: "If AI results change wildly from day to day, the problem is usually not the tool. It is the brief. Treat the AI task like a small contract: inputs, outputs, constraints, and checkpoints.",
         body: [
             { type: "h2", text: "What Goes Wrong With Prompt-Only Work" },
@@ -38,6 +39,7 @@ const articles = [
         imageApproved: true,
         excerpt: "A practical guide for design firms on agentic systems, multi-step workflows, and where human judgment still matters.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-render.png",
+        imageLayout: "portrait",
         quickAnswer: "Agentic AI goes beyond single prompts. It can plan multi-step work, use tools, check intermediate outputs, and prepare a more complete design workflow for review.",
         body: [
             { type: "h2", text: "What Makes It Different" },
@@ -58,6 +60,7 @@ const articles = [
         imageApproved: false,
         excerpt: "A comparison of rendering tools for architects, framed around speed, cost, visual control, and workflow fit.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-houses.png",
+        imageLayout: "landscape",
         quickAnswer: "The best rendering tool depends on the decision you need to make. Early concept work needs speed; client presentation needs consistency; technical review needs control.",
         body: [
             { type: "h2", text: "The Real Comparison" },
@@ -76,6 +79,7 @@ const articles = [
         imageApproved: true,
         excerpt: "A fast framework for turning one idea into a legible competition board using mobile AI tools.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
+        imageLayout: "landscape",
         quickAnswer: "A 20-minute competition entry can work when it focuses on one clear concept, one strong image, and a short explanation.",
         body: [
             { type: "h2", text: "What Matters" },
@@ -220,11 +224,13 @@ function renderArticle(slug) {
             <div class="article-actions">
                 <span class="status-note">${article.status}</span>
             </div>
-            <section class="article-quick">
-                <strong>Quick Answer</strong>
-                <p>${article.quickAnswer}</p>
+            <section class="article-intro ${article.imageLayout === "portrait" ? "portrait" : "landscape"}">
+                <section class="article-quick">
+                    <strong>Quick Answer</strong>
+                    <p>${article.quickAnswer}</p>
+                </section>
+                ${renderImage(article.image, `Architectural image candidate for ${article.title}`, "visual-panel")}
             </section>
-            ${renderImage(article.image, `Architectural image candidate for ${article.title}`, "visual-panel")}
             <section class="article-body">
                 ${article.body.map(renderBlock).join("")}
             </section>
