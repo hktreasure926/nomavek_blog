@@ -1,4 +1,4 @@
-# Studio Nomad Blog
+# Nomavek Lab Blog
 
 AI architecture workflow guides, prompt libraries, and rendering techniques for small studios and freelancers.
 
@@ -24,9 +24,9 @@ AI architecture workflow guides, prompt libraries, and rendering techniques for 
 
 ---
 
-## About Studio Nomad
+## About Nomavek Lab / Studio Nomad
 
-Studio Nomad is an AI-driven architectural workflow platform for small studios and freelancers. Move from reference images to structured prompt direction, generated visuals, and refinement — without rebuilding the process from scratch each time.
+Nomavek Lab publishes practical AI workflow notes for architects, and builds Studio Nomad (an AI-driven architectural workflow platform). Move from reference images to structured prompt direction, generated visuals, and refinement — without rebuilding the process from scratch each time.
 
 - **S11 + S12 Framework** — Separates Subject (what) from Style (how)
 - **Skill-Based Routing** — S1 Massing, S2 Style Swap, S3 Perspective Shift
@@ -36,4 +36,4 @@ Studio Nomad is an AI-driven architectural workflow platform for small studios a
 
 ---
 
-*© 2026 Studio Nomad*
+*© 2026 Nomavek Lab*

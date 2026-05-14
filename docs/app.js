@@ -1,7 +1,7 @@
 // Blog data - embedded for GitHub Pages preview
 const BLOG_DATA = {
     "meta": {
-        "title": "Studio Nomad Blog",
+        "title": "Nomavek Lab Blog",
         "description": "AI architecture workflow guides, prompt libraries, and rendering techniques",
         "url": "https://studionomad.vercel.app",
         "repo": "https://github.com/hktreasure926/arch-prompt-db",
