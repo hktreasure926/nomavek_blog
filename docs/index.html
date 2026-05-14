@@ -3,41 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomavek Lab Blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Nomavek Blog</title>
+    <meta name="description" content="AI architecture blog for design studios tracking tools, decisions, visualization, and practice workflows.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23fffdf8'/%3E%3Crect x='12' y='12' width='40' height='40' rx='10' fill='none' stroke='%2325231f' stroke-width='4'/%3E%3Crect x='23' y='23' width='18' height='18' fill='%23a46a3c'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <a href="/" class="logo">Nomavek <span>Lab</span></a>
-            <nav class="nav">
-                <a href="#" class="active">Blog</a>
-                <a href="https://github.com/hktreasure926/arch-prompt-db">Prompts</a>
-                <a href="https://studionomad.vercel.app">Studio Nomad</a>
-            </nav>
-        </div>
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="Nomavek Blog home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Nomavek Blog</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#latest-blog">Latest Blog</a>
+            <a href="#field-notes">Field Notes</a>
+            <a href="https://www.nomavek.com/#cowork-board">Start Board</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-label">Nomavek Lab</div>
-        <h1>AI Architecture<br>Workflow</h1>
-        <p>Prompt libraries, rendering techniques, and workflow guides for small architecture studios using AI tools.</p>
-    </section>
-
-    <main class="content">
-        <div class="filters" id="filters">
-            <button class="filter-tag active" data-filter="all">All</button>
-        </div>
-
-        <div class="article-grid" id="article-grid">
-            <div class="loading">Loading articles...</div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <p>© 2026 Nomavek Lab — <a href="https://studionomad.vercel.app">Studio Nomad</a></p>
-    </footer>
+    <main id="app" tabindex="-1"></main>
 
     <script src="app.js"></script>
 </body>

@@ -13,7 +13,8 @@ ai-summary: "Explains a contract-style method for briefing AI in architectural w
 
 # Why Architects Should Treat AI Like a Contract, Not a Prompt
 
-> **Reading time:** 6 minutes  
+> **Date:** 2026-05-14
+> **Tags:** AI Workflow, Architecture Practice, AEO
 > **Category:** Workflow Guides
 
 ---
@@ -143,4 +144,3 @@ A: Right after you choose a massing/view. Before you do heavy refinement.
 ---
 
 Try Studio Nomad → https://studionomad.vercel.app
-

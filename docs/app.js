@@ -1,148 +1,307 @@
-// Blog data - embedded for GitHub Pages preview
-const BLOG_DATA = {
-    "meta": {
-        "title": "Nomavek Lab Blog",
-        "description": "AI architecture workflow guides, prompt libraries, and rendering techniques",
-        "url": "https://studionomad.vercel.app",
-        "repo": "https://github.com/hktreasure926/arch-prompt-db",
-        "workflow": "Draft → Review → Approve → Publish"
+const articles = [
+    {
+        slug: "ai-contracts-beat-prompts",
+        title: "Why Architects Should Treat AI Like a Contract, Not a Prompt",
+        date: "2026-05-14",
+        status: "Draft for review",
+        category: "Workflow Guides",
+        tags: ["AI Workflow", "Architecture Practice", "AEO"],
+        excerpt: "Prompts are fragile. Contracts are durable. Here is a practical way to brief AI so your studio gets consistent outputs across a project.",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
+        quickAnswer: "If AI results change wildly from day to day, the problem is usually not the tool. It is the brief. Treat the AI task like a small contract: inputs, outputs, constraints, and checkpoints.",
+        body: [
+            { type: "h2", text: "What Goes Wrong With Prompt-Only Work" },
+            { type: "p", text: "Most architects start with loose requests like make this render more premium, make it more Japanese minimal, or try a warmer afternoon light. These can work once, but they drift over time because the reference set changes, the team changes, and nobody remembers which decisions were already locked." },
+            { type: "h2", text: "A Simple Contract Structure" },
+            { type: "p", text: "Think of this as a one-page agreement between you and the AI. It does not need legal language. It needs clear project boundaries." },
+            { type: "h3", text: "1. Inputs" },
+            { type: "list", items: ["Base images: massing, clay render, or site photo", "Context: location, climate, usage", "References: 3 to 8 images max", "View list: exterior hero, courtyard, lobby, or selected frames"] },
+            { type: "h3", text: "2. Outputs" },
+            { type: "list", items: ["3 variations with distinct directions", "1 safe option and 2 stretch options", "One-sentence intent caption per image"] },
+            { type: "h3", text: "3. Constraints" },
+            { type: "list", items: ["Keep massing unchanged", "Keep camera angle unchanged", "Keep program cues readable", "Avoid fake signage or random foreground people"] },
+            { type: "h2", text: "The Two Locks Rule" },
+            { type: "p", text: "Two locks prevent most wasted cycles: lock the camera, then lock the material direction. Once those are fixed, iteration becomes useful instead of chaotic." },
+            { type: "code", text: "AI BRIEF CONTRACT\n\nGoal:\n- [One sentence: what this image must communicate]\n\nInputs:\n- Base image(s):\n- References, max 8:\n- View list:\n\nOutputs:\n- Provide 3 variations: Safe / Stretch A / Stretch B\n- Provide 1-sentence intent caption per variation\n\nConstraints:\n- Camera:\n- Massing:\n- Program cues:\n- Materials to avoid:\n\nCheckpoints:\n- A: Choose direction, 1 only\n- B: Lock materials and lighting\n- C: Detail refinement only" },
+            { type: "h2", text: "Nomavek Takeaway" },
+            { type: "p", text: "This is why Nomavek treats the board as the product. A good AI workflow is not only the generated image. It is the locked brief, visible decisions, and a client-ready explanation of why one direction is stronger than another." }
+        ]
     },
-    "published": [
-        {
-            "slug": "20min-competition-entry",
-            "title": "How to Make a Winning Architectural Competition Entry in 20 Minutes (Using Only Your Phone)",
-            "date": "2026-04-24",
-            "status": "published",
-            "tags": ["competition", "mobile-workflow", "nano-banana"],
-            "excerpt": "A battle-tested framework for creating competition-worthy architectural submissions in under 20 minutes using only a smartphone and AI image generators.",
-            "file": "posts/20min-competition-entry.md",
-            "ai-summary": "Step-by-step guide for architects to create competition entries quickly using mobile AI tools, covering concept generation, image creation, and presentation layout."
-        },
-        {
-            "slug": "bionic-architecture-ai-workflow",
-            "title": "How to Use AI for Bionic Architecture: From Nature to Built Form",
-            "date": "2026-04-23",
-            "status": "published",
-            "tags": ["bionic-architecture", "concept-board", "parametric", "s11-s12"],
-            "excerpt": "A complete workflow for transforming natural forms into architectural concepts using AI image generation. From succulent rosette to urban public building.",
-            "file": "posts/bionic-architecture-ai-workflow.md",
-            "ai-summary": "Step-by-step guide on using AI tools to generate bionic architecture concept boards, covering inspiration analysis, parametric evolution, and material detailing."
-        },
-        {
-            "slug": "ai-rendering-tools-2026-comparison",
-            "title": "AI Rendering Tools for Architects in 2026: Complete Comparison",
-            "date": "2026-04-23",
-            "status": "published",
-            "tags": ["nano-banana", "d5-render", "midjourney-v7", "stable-diffusion", "rendering"],
-            "excerpt": "Compare Nano Banana Pro, D5 Render, Midjourney v7, and Stable Diffusion for architectural visualization.",
-            "file": "posts/ai-rendering-tools-2026-comparison.md",
-            "ai-summary": "A detailed comparison of 4 AI rendering tools for architects, covering speed, cost, quality, and workflow integration."
-        },
-        {
-            "slug": "15-urban-schemes",
-            "title": "15 Urban Waterfront Site Transformation Prompts for Studio Nomad",
-            "date": "2026-04-21",
-            "status": "published",
-            "tags": ["urban-design", "waterfront", "prompt-library", "s11-s12"],
-            "excerpt": "Transform any city center waterfront site with these 15 ready-to-use Studio Nomad prompt templates.",
-            "file": "posts/15-urban-schemes.md",
-            "ai-summary": "15 prompt templates for urban waterfront site transformation using Studio Nomad's S11+S12 framework."
-        },
-        {
-            "slug": "s11-s12-framework",
-            "title": "S11 + S12 Prompt Framework: How We Structure Architectural AI Prompts",
-            "date": "2026-04-15",
-            "status": "published",
-            "tags": ["s11-s12", "prompt-engineering", "framework", "nano-banana"],
-            "excerpt": "The S11+S12 framework separates Subject from Style for consistent architectural AI outputs.",
-            "file": "posts/s11-s12-framework.md",
-            "ai-summary": "Explains the S11+S12 prompt framework used in Studio Nomad for architectural AI generation."
-        }
-    ],
-    "drafts": []
-};
+    {
+        slug: "agentic-ai-architecture-guide",
+        title: "What Is Agentic AI in Architecture?",
+        date: "2026-04-24",
+        status: "Draft for review",
+        category: "AI Practice",
+        tags: ["Agentic AI", "Automation", "AEO"],
+        excerpt: "A practical guide for design firms on agentic systems, multi-step workflows, and where human judgment still matters.",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-render.png",
+        quickAnswer: "Agentic AI goes beyond single prompts. It can plan multi-step work, use tools, check intermediate outputs, and prepare a more complete design workflow for review.",
+        body: [
+            { type: "h2", text: "What Makes It Different" },
+            { type: "p", text: "Traditional AI tools respond to one prompt. Agentic systems coordinate several actions: reading inputs, planning steps, using tools, checking outputs, and packaging results." },
+            { type: "h2", text: "Where It Helps Architects" },
+            { type: "list", items: ["Concept render pipelines", "Site analysis reports", "Visualization coordination", "Presentation board preparation"] },
+            { type: "h2", text: "Nomavek Takeaway" },
+            { type: "p", text: "The useful starting point is not an autonomous office. It is one narrow pipeline from image and brief to design options and a board that someone can review." }
+        ]
+    },
+    {
+        slug: "ai-rendering-tools-2026-comparison",
+        title: "AI Rendering Tools for Architects in 2026",
+        date: "2026-04-23",
+        status: "Published archive",
+        category: "AI Design Tools",
+        tags: ["Rendering", "Tool Comparison"],
+        excerpt: "A comparison of rendering tools for architects, framed around speed, cost, visual control, and workflow fit.",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-houses.png",
+        quickAnswer: "The best rendering tool depends on the decision you need to make. Early concept work needs speed; client presentation needs consistency; technical review needs control.",
+        body: [
+            { type: "h2", text: "The Real Comparison" },
+            { type: "p", text: "Rendering tools are getting cheaper and faster. That means the studio value moves toward choosing directions, comparing options, and explaining why one image supports the brief." },
+            { type: "h2", text: "Nomavek Takeaway" },
+            { type: "p", text: "Cheap images are not the final product. A useful board turns options into decisions." }
+        ]
+    },
+    {
+        slug: "20min-competition-entry",
+        title: "How to Make a Competition Entry in 20 Minutes",
+        date: "2026-04-24",
+        status: "Published archive",
+        category: "Competitions",
+        tags: ["Competition", "Mobile Workflow"],
+        excerpt: "A fast framework for turning one idea into a legible competition board using mobile AI tools.",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
+        quickAnswer: "A 20-minute competition entry can work when it focuses on one clear concept, one strong image, and a short explanation.",
+        body: [
+            { type: "h2", text: "What Matters" },
+            { type: "p", text: "Jurors need clarity. A rushed board should not try to look complete; it should make one design move obvious." },
+            { type: "h2", text: "Nomavek Takeaway" },
+            { type: "p", text: "The board is a thinking tool. It should make the next design decision easier." }
+        ]
+    }
+];
 
-// Initialize page
-document.addEventListener('DOMContentLoaded', function() {
-    loadArticles();
-});
+const fieldNotes = [
+    {
+        meta: "Instagram seed / May 5, 2026",
+        title: "For freelancer architects and small studios",
+        text: "The first bridge from the Nomavek Instagram post: start with one project image, one design question, and one board instead of chasing another prompt trick.",
+        href: "https://www.instagram.com/p/DX9ooGUFIMG/",
+        linkText: "View seed post",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
+        alt: "Sketch image candidate for small studio AI workflow note"
+    },
+    {
+        meta: "Next field note / Draft",
+        title: "What small studios should ask before adopting AI tools",
+        text: "Does the tool help you decide, or only help you generate? That question should shape the blog, Instagram, and QuickFix offer.",
+        href: "#article/ai-contracts-beat-prompts",
+        linkText: "Read the draft direction",
+        image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
+        alt: "Facade detail image candidate for AI adoption field note"
+    }
+];
 
-function loadArticles() {
-    const articles = [...BLOG_DATA.published, ...BLOG_DATA.drafts];
-    
-    // Extract unique tags
-    const allTags = new Set();
-    articles.forEach(article => {
-        article.tags.forEach(tag => allTags.add(tag));
-    });
-    
-    // Add filter buttons
-    const filtersContainer = document.getElementById('filters');
-    allTags.forEach(tag => {
-        const btn = document.createElement('button');
-        btn.className = 'filter-tag';
-        btn.textContent = tag;
-        btn.dataset.filter = tag;
-        btn.onclick = () => filterArticles(tag);
-        filtersContainer.appendChild(btn);
-    });
-    
-    // Render articles
-    renderArticles(articles);
+const topics = [
+    ["AI Design Tools", "Which tools matter, when they matter, and what they change in practice."],
+    ["Rendering & Visualization", "From fast outputs to consistent image sets and client-facing boards."],
+    ["Architecture Practice", "How small studios can use AI without losing design judgment."],
+    ["Competitions", "Fast concept framing, board logic, and visual clarity under deadline."],
+    ["Client Presentation", "Turning options into a readable direction for non-design audiences."],
+    ["Studio Automation", "Lean automations for briefs, files, approvals, and repeatable production."]
+];
+
+const app = document.getElementById("app");
+
+function renderHome() {
+    const featured = articles[0];
+    app.innerHTML = `
+        <div class="page-shell">
+            <section class="hero" id="home">
+                <div class="hero-copy">
+                    <h1>Nomavek Blog</h1>
+                    <p class="hero-summary">Practical notes on AI tools, architectural design work, visualization, client presentation, and small studio workflows.</p>
+                    <div class="hero-actions">
+                        <a class="button" href="#latest-blog">View latest blog</a>
+                        <a class="button secondary" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section latest-section" id="latest-blog" aria-labelledby="latest-title">
+                <div class="section-title">
+                    <h2 id="latest-title">Latest blog</h2>
+                    <p>Useful AI and architecture notes first, with a practical link back to project workflow when relevant.</p>
+                </div>
+                ${renderFeatured(featured)}
+                <div class="article-grid">
+                    ${articles.slice(1).map(renderCard).join("")}
+                </div>
+            </section>
+
+            <section class="section" id="topics" aria-labelledby="topics-title">
+                <div class="section-title">
+                    <h2 id="topics-title">Topics</h2>
+                    <p>Organized for answer engines and for architects who need practical signals.</p>
+                </div>
+                <div class="topic-grid">
+                    ${topics.map(([title, text]) => `<div class="topic-card"><strong>${title}</strong><span>${text}</span></div>`).join("")}
+                </div>
+            </section>
+
+            <section class="section" id="field-notes" aria-labelledby="field-title">
+                <div class="section-title">
+                    <h2 id="field-title">Field notes</h2>
+                    <p>Shorter ideas that can become Instagram posts, carousels, or deeper articles.</p>
+                </div>
+                <div class="field-layout">
+                    ${fieldNotes.map(renderFieldNote).join("")}
+                </div>
+            </section>
+
+            <section class="cta-panel" aria-label="Nomavek call to action">
+                <div>
+                    <h2>Have a sketch, render, or design question?</h2>
+                    <p>Turn it into visual options, rationale, and a client-ready board. The blog explains the shift; Nomavek turns the shift into a working decision process.</p>
+                    <div class="cta-actions">
+                        <a class="button" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
+                        <a class="button secondary" href="https://www.nomavek.com/">Visit Nomavek Lab</a>
+                    </div>
+                </div>
+                <div class="cta-note">Public posting, public deployment, and image/demo use remain approval-gated.</div>
+            </section>
+
+            <footer class="site-footer">
+                Nomavek Blog. AI architecture notes for small studios and design teams.
+            </footer>
+        </div>
+    `;
 }
 
-function renderArticles(articles) {
-    const grid = document.getElementById('article-grid');
-    
-    if (articles.length === 0) {
-        grid.innerHTML = '<div class="loading">No articles yet.</div>';
-        return;
-    }
-    
-    grid.innerHTML = articles.map(article => `
-        <article class="article-card" data-tags="${article.tags.join(' ')}">
-            <div class="article-image">✦</div>
-            <div class="article-content">
-                <div class="article-meta">
-                    <span class="article-date">${formatDate(article.date)}</span>
-                    ${article.tags.slice(0, 2).map(tag => `<span class="article-tag">${tag}</span>`).join('')}
-                </div>
-                <h2 class="article-title">${article.title}</h2>
-                <p class="article-excerpt">${article.excerpt}</p>
-                <div class="article-footer">
-                    <span class="article-status ${article.status}">${article.status}</span>
-                    <a href="https://github.com/hktreasure926/arch-prompt-db/blob/main/blog/${article.file}" 
-                       class="article-link" target="_blank">
-                        Read →
-                    </a>
-                </div>
+function renderFeatured(article) {
+    return `
+        <article class="featured-card">
+            ${renderImage(article.image, `Architectural image candidate for ${article.title}`, "featured-media")}
+            <div class="featured-copy">
+                ${renderMeta(article)}
+                <h3>${article.title}</h3>
+                <p>${article.excerpt}</p>
+                <a class="text-link" href="#article/${article.slug}">Open blog post</a>
             </div>
         </article>
-    `).join('');
+    `;
 }
 
-function filterArticles(tag) {
-    const buttons = document.querySelectorAll('.filter-tag');
-    buttons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.filter === tag);
-    });
-    
-    const cards = document.querySelectorAll('.article-card');
-    cards.forEach(card => {
-        if (tag === 'all') {
-            card.style.display = 'block';
-        } else {
-            const cardTags = card.dataset.tags;
-            card.style.display = cardTags.includes(tag) ? 'block' : 'none';
-        }
-    });
+function renderCard(article) {
+    return `
+        <article class="article-card">
+            ${renderImage(article.image, `Image candidate for ${article.title}`, "card-image-wrap")}
+            ${renderMeta(article)}
+            <h3>${article.title}</h3>
+            <p>${article.excerpt}</p>
+            <a class="text-link" href="#article/${article.slug}">Read blog</a>
+        </article>
+    `;
 }
 
-function formatDate(dateStr) {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-    });
+function renderArticle(slug) {
+    const article = articles.find((item) => item.slug === slug) || articles[0];
+    app.innerHTML = `
+        <article class="article-view">
+            <a class="text-link back-link" href="#home">Back to blog</a>
+            ${renderMeta(article)}
+            <h1>${article.title}</h1>
+            <div class="article-actions">
+                <span class="status-note">${article.status}</span>
+            </div>
+            <section class="article-quick">
+                <strong>Quick Answer</strong>
+                <p>${article.quickAnswer}</p>
+            </section>
+            ${renderImage(article.image, `Architectural image candidate for ${article.title}`, "visual-panel")}
+            <section class="article-body">
+                ${article.body.map(renderBlock).join("")}
+            </section>
+            <section class="cta-panel">
+                <div>
+                    <h2>Turn this into a project board</h2>
+                    <p>Nomavek connects the article insight back to a practical decision workflow: one image, one brief, visual options, and a board.</p>
+                    <div class="cta-actions">
+                        <a class="button" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
+                        <a class="button secondary" href="#home">Read more blog</a>
+                    </div>
+                </div>
+                <div class="cta-note">This review page does not publish the draft article to production.</div>
+            </section>
+        </article>
+    `;
 }
+
+function renderFieldNote(note) {
+    return `
+        <article class="field-note">
+            ${renderImage(note.image, note.alt, "field-image-wrap")}
+            <div class="meta">${note.meta}</div>
+            <h3>${note.title}</h3>
+            <p>${note.text}</p>
+            <a class="text-link" href="${note.href}">${note.linkText}</a>
+        </article>
+    `;
+}
+
+function renderMeta(article) {
+    return `
+        <div class="blog-meta">
+            <span>${formatDate(article.date)}</span>
+            <span>${article.category}</span>
+            ${article.tags.slice(0, 3).map((tag) => `<span>${tag}</span>`).join("")}
+        </div>
+    `;
+}
+
+function renderImage(src, alt, className) {
+    return `
+        <figure class="image-frame ${className}">
+            <img src="${src}" alt="${alt}">
+            <figcaption class="image-status">Image pending approval</figcaption>
+        </figure>
+    `;
+}
+
+function formatDate(dateString) {
+    return new Intl.DateTimeFormat("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+    }).format(new Date(`${dateString}T00:00:00`));
+}
+
+function renderBlock(block) {
+    if (block.type === "h2") return `<h2>${block.text}</h2>`;
+    if (block.type === "h3") return `<h3>${block.text}</h3>`;
+    if (block.type === "p") return `<p>${block.text}</p>`;
+    if (block.type === "list") return `<ul>${block.items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
+    if (block.type === "code") return `<pre><code>${escapeHtml(block.text)}</code></pre>`;
+    return "";
+}
+
+function escapeHtml(value) {
+    return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+}
+
+function route() {
+    const hash = window.location.hash || "#home";
+    if (hash.startsWith("#article/")) {
+        renderArticle(hash.replace("#article/", ""));
+    } else {
+        renderHome();
+    }
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+}
+
+window.addEventListener("hashchange", route);
+route();

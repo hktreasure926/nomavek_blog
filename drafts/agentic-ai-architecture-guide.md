@@ -14,7 +14,8 @@ ai-summary: "A practical introduction to agentic AI systems for architectural pr
 
 # What Is Agentic AI in Architecture? A Practical Guide for Design Firms
 
-> **Reading time:** 8 minutes  
+> **Date:** 2026-04-24
+> **Tags:** Agentic AI, Automation, Architecture Practice
 > **Category:** Industry Trends
 
 ---
