@@ -82,7 +82,7 @@ const articles = [
     }
 ];
 
-const fieldNotes = [
+const relatedPosts = [
     {
         meta: "Instagram seed / May 5, 2026",
         title: "For freelancer architects and small studios",
@@ -93,13 +93,13 @@ const fieldNotes = [
         alt: "Sketch image candidate for small studio AI workflow note"
     },
     {
-        meta: "Next field note / Draft",
+        meta: "Related post / Draft",
         title: "What small studios should ask before adopting AI tools",
-        text: "Does the tool help you decide, or only help you generate? That question should shape the blog, Instagram, and QuickFix offer.",
+        text: "Does the tool help you decide, or only help you generate? That question should shape the blog, Instagram, and the demo board direction.",
         href: "#article/ai-contracts-beat-prompts",
         linkText: "Read the draft direction",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
-        alt: "Facade detail image candidate for AI adoption field note"
+        alt: "Facade detail image candidate for AI adoption related post"
     }
 ];
 
@@ -124,7 +124,7 @@ function renderHome() {
                     <p class="hero-summary">Practical notes on AI tools, architectural design work, visualization, client presentation, and small studio workflows.</p>
                     <div class="hero-actions">
                         <a class="button" href="#latest-blog">View latest blog</a>
-                        <a class="button secondary" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
+                        <a class="button secondary" href="https://www.nomavek.com/#cowork-board">View demo board</a>
                     </div>
                 </div>
             </section>
@@ -150,13 +150,13 @@ function renderHome() {
                 </div>
             </section>
 
-            <section class="section" id="field-notes" aria-labelledby="field-title">
+            <section class="section" id="related-posts" aria-labelledby="related-title">
                 <div class="section-title">
-                    <h2 id="field-title">Field notes</h2>
-                    <p>Shorter ideas that can become Instagram posts, carousels, or deeper articles.</p>
+                    <h2 id="related-title">Related posts</h2>
+                    <p>Short posts connected to Instagram, demos, and deeper blog articles.</p>
                 </div>
                 <div class="field-layout">
-                    ${fieldNotes.map(renderFieldNote).join("")}
+                    ${relatedPosts.map(renderRelatedPost).join("")}
                 </div>
             </section>
 
@@ -165,7 +165,7 @@ function renderHome() {
                     <h2>Have a sketch, render, or design question?</h2>
                     <p>Turn it into visual options, rationale, and a client-ready board. The blog explains the shift; Nomavek turns the shift into a working decision process.</p>
                     <div class="cta-actions">
-                        <a class="button" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
+                        <a class="button" href="https://www.nomavek.com/#cowork-board">View demo board</a>
                         <a class="button secondary" href="https://www.nomavek.com/">Visit Nomavek Lab</a>
                     </div>
                 </div>
@@ -228,7 +228,7 @@ function renderArticle(slug) {
                     <h2>Turn this into a project board</h2>
                     <p>Nomavek connects the article insight back to a practical decision workflow: one image, one brief, visual options, and a board.</p>
                     <div class="cta-actions">
-                        <a class="button" href="https://www.nomavek.com/#cowork-board">Start QuickFix Board</a>
+                        <a class="button" href="https://www.nomavek.com/#cowork-board">View demo board</a>
                         <a class="button secondary" href="#home">Read more blog</a>
                     </div>
                 </div>
@@ -238,7 +238,7 @@ function renderArticle(slug) {
     `;
 }
 
-function renderFieldNote(note) {
+function renderRelatedPost(note) {
     return `
         <article class="field-note">
             ${renderImage(note.image, note.alt, "field-image-wrap")}
@@ -253,9 +253,11 @@ function renderFieldNote(note) {
 function renderMeta(article) {
     return `
         <div class="blog-meta">
-            <span>${formatDate(article.date)}</span>
-            <span>${article.category}</span>
-            ${article.tags.slice(0, 3).map((tag) => `<span>${tag}</span>`).join("")}
+            <time class="meta-date" datetime="${article.date}">${formatDate(article.date)}</time>
+            <div class="meta-tags">
+                <span>${article.category}</span>
+                ${article.tags.slice(0, 3).map((tag) => `<span>${tag}</span>`).join("")}
+            </div>
         </div>
     `;
 }
@@ -264,7 +266,6 @@ function renderImage(src, alt, className) {
     return `
         <figure class="image-frame ${className}">
             <img src="${src}" alt="${alt}">
-            <figcaption class="image-status">Image pending approval</figcaption>
         </figure>
     `;
 }

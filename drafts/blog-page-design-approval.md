@@ -32,7 +32,7 @@ Primary reader:
 ```text
 blog.nomavek.com
 ────────────────────────────────────────
-Nomavek Blog                            Latest Blog / Field Notes / Start Board
+Nomavek Blog                            Latest Blog / Related Posts / View Demo Board
 
 Nomavek Blog
 Compact intro on AI tools, design workflows, and architectural practice.
@@ -54,13 +54,13 @@ Competitions
 Client Presentation
 Studio Automation
 
-Field Notes
-Shorter posts that can connect to Instagram carousels.
+Related Posts
+Short posts that can connect to Instagram carousels, demos, or deeper articles.
 
 Nomavek Bridge
 Have a sketch, render, or project question?
 Turn it into visual options, rationale, and a client-ready board.
-[Start QuickFix Board] [Visit Nomavek Lab]
+[View Demo Board] [Visit Nomavek Lab]
 ────────────────────────────────────────
 ```
 
@@ -89,14 +89,15 @@ FAQ
 Short Q&A blocks for answer engines.
 
 CTA
-[Start QuickFix Board] [Read more blog]
+[View Demo Board] [Read more blog]
 ```
 
 ## Visual Direction
 
 - Quiet editorial layout, not a SaaS marketing page.
 - Keep Nomavek Lab's architectural tone: warm paper background, restrained ink, muted accent.
-- Every blog block that uses an image must show an approved image, or a visible pending-approval label during review.
+- Every blog block that uses an image must use an approved image before public publishing.
+- Image approval status belongs in Codex and the private approval register, not as a visible label on the public blog page.
 - Use real architectural visuals, approved demo images, approved internet-sourced images, or approved generated images only.
 - Avoid decorative gradient blobs, oversized marketing cards, or too much single-color beige.
 - Keep article cards compact and scannable.
@@ -111,7 +112,7 @@ CTA
 - Competitions
 - Client Presentation
 - Studio Automation
-- Field Notes
+- Related Posts
 
 ## Conversion Pattern
 
@@ -128,7 +129,7 @@ AI news or tool change
 
 CTA copy:
 
-- Start QuickFix Board
+- View Demo Board
 - Turn a project image into design options
 - Visit Nomavek Lab
 
@@ -145,7 +146,7 @@ CTA copy:
 1. Fix `blog.nomavek.com` so the root serves the HTML blog page, not `index.csv`.
 2. Rebrand visible blog UI from `Studio Nomad Blog` to `Nomavek Blog`.
 3. Update metadata to `Nomavek Blog`.
-4. Add compact blog homepage sections: Featured Blog Post, Latest Blog, Topics, Field Notes, Nomavek Bridge.
+4. Add compact blog homepage sections: Featured Blog Post, Latest Blog, Topics, Related Posts, Nomavek Bridge.
 5. Change article links away from GitHub markdown links toward local reader-friendly article pages or a simple static article viewer.
 6. Update index metadata and categories for broader AI architecture AEO.
 7. Keep all posts as drafts unless user approves publication.
@@ -166,9 +167,9 @@ The May 5 Instagram post can become a blog/landing bridge:
 
 ```text
 Instagram: Let's talk if you are freelancer architect or with small studio!
-  -> Blog field note: What small studios should ask before adopting AI design tools
+  -> Related blog post: What small studios should ask before adopting AI design tools
   -> Nomavek page: Start with one uploaded image and one decision board
-  -> CTA: Start QuickFix Board
+  -> CTA: View Demo Board
 ```
 
 ## Approval Needed

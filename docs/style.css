@@ -285,9 +285,6 @@ a {
 
 .meta,
 .blog-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
     margin-bottom: 20px;
     color: var(--muted);
     font-size: 12px;
@@ -296,7 +293,30 @@ a {
     letter-spacing: 0.08em;
 }
 
-.blog-meta span {
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.blog-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.meta-date {
+    color: var(--muted);
+}
+
+.meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.meta-tags span {
     min-height: 30px;
     display: inline-flex;
     align-items: center;
@@ -366,23 +386,6 @@ a {
     display: block;
 }
 
-.image-status {
-    position: absolute;
-    left: 12px;
-    bottom: 12px;
-    min-height: 28px;
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 999px;
-    padding: 0 10px;
-    background: rgba(37, 35, 31, 0.76);
-    color: #fffdf8;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
 .card-image-wrap img {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -394,12 +397,12 @@ a {
 .article-card h3,
 .article-card p,
 .article-card .text-link {
-    margin-left: 22px;
-    margin-right: 22px;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 .article-card .blog-meta {
-    margin-top: 22px;
+    margin-top: 24px;
 }
 
 .article-card h3 {
@@ -635,6 +638,15 @@ a {
 
     .hero {
         padding-top: 30px;
+    }
+
+    .site-nav {
+        gap: 4px;
+    }
+
+    .site-nav a {
+        padding: 0 8px;
+        font-size: 12px;
     }
 
     .hero h1 {
