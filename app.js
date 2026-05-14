@@ -6,6 +6,7 @@ const articles = [
         status: "Draft for review",
         category: "Workflow Guides",
         tags: ["AI Workflow", "Architecture Practice", "AEO"],
+        imageApproved: true,
         excerpt: "Prompts are fragile. Contracts are durable. Here is a practical way to brief AI so your studio gets consistent outputs across a project.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
         quickAnswer: "If AI results change wildly from day to day, the problem is usually not the tool. It is the brief. Treat the AI task like a small contract: inputs, outputs, constraints, and checkpoints.",
@@ -34,6 +35,7 @@ const articles = [
         status: "Draft for review",
         category: "AI Practice",
         tags: ["Agentic AI", "Automation", "AEO"],
+        imageApproved: true,
         excerpt: "A practical guide for design firms on agentic systems, multi-step workflows, and where human judgment still matters.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-render.png",
         quickAnswer: "Agentic AI goes beyond single prompts. It can plan multi-step work, use tools, check intermediate outputs, and prepare a more complete design workflow for review.",
@@ -53,6 +55,7 @@ const articles = [
         status: "Published archive",
         category: "AI Design Tools",
         tags: ["Rendering", "Tool Comparison"],
+        imageApproved: false,
         excerpt: "A comparison of rendering tools for architects, framed around speed, cost, visual control, and workflow fit.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-houses.png",
         quickAnswer: "The best rendering tool depends on the decision you need to make. Early concept work needs speed; client presentation needs consistency; technical review needs control.",
@@ -70,6 +73,7 @@ const articles = [
         status: "Published archive",
         category: "Competitions",
         tags: ["Competition", "Mobile Workflow"],
+        imageApproved: true,
         excerpt: "A fast framework for turning one idea into a legible competition board using mobile AI tools.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
         quickAnswer: "A 20-minute competition entry can work when it focuses on one clear concept, one strong image, and a short explanation.",
@@ -113,9 +117,10 @@ const topics = [
 ];
 
 const app = document.getElementById("app");
+const visibleArticles = articles.filter((article) => article.imageApproved !== false);
 
 function renderHome() {
-    const featured = articles[0];
+    const featured = visibleArticles[0];
     app.innerHTML = `
         <div class="page-shell">
             <section class="hero" id="home">
@@ -136,7 +141,7 @@ function renderHome() {
                 </div>
                 ${renderFeatured(featured)}
                 <div class="article-grid">
-                    ${articles.slice(1).map(renderCard).join("")}
+                    ${visibleArticles.slice(1).map(renderCard).join("")}
                 </div>
             </section>
 
@@ -206,7 +211,7 @@ function renderCard(article) {
 }
 
 function renderArticle(slug) {
-    const article = articles.find((item) => item.slug === slug) || articles[0];
+    const article = visibleArticles.find((item) => item.slug === slug) || visibleArticles[0];
     app.innerHTML = `
         <article class="article-view">
             <a class="text-link back-link" href="#home">Back to blog</a>
