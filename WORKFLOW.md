@@ -1,4 +1,4 @@
-# Studio Nomad Blog — Workflow
+# Nomavek Lab Blog — Workflow
 
 ## Content Strategy (AEO-Focused)
 
@@ -118,4 +118,4 @@ Try Studio Nomad → [link]
 
 ---
 
-*Last updated: 2026-04-23*
+*Last updated: 2026-05-14*
