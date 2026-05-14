@@ -303,27 +303,31 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 9px;
+    gap: 8px;
 }
 
 .meta-date {
     color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.06em;
 }
 
 .meta-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
 }
 
 .meta-tags span {
-    min-height: 30px;
+    min-height: 26px;
     display: inline-flex;
     align-items: center;
     border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 0 10px;
+    border-radius: 7px;
+    padding: 0 8px;
     background: rgba(255, 253, 248, 0.74);
+    font-size: 11px;
+    letter-spacing: 0.06em;
 }
 
 .featured-copy h3,
@@ -370,6 +374,7 @@ a {
 }
 
 .article-card {
+    --card-pad: 24px;
     display: flex;
     min-height: 430px;
     flex-direction: column;
@@ -397,21 +402,24 @@ a {
 .article-card h3,
 .article-card p,
 .article-card .text-link {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: var(--card-pad);
+    margin-right: var(--card-pad);
 }
 
 .article-card .blog-meta {
-    margin-top: 24px;
+    margin-top: 22px;
+    margin-bottom: 16px;
 }
 
 .article-card h3 {
-    font-size: 25px;
+    font-size: 24px;
+    line-height: 1.12;
 }
 
 .article-card p {
-    margin: 16px 0 0;
+    margin: 14px var(--card-pad) 0;
     font-size: 14px;
+    line-height: 1.65;
 }
 
 .article-card .text-link {
