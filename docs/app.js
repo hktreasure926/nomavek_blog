@@ -178,7 +178,7 @@ function renderHome() {
                         <a class="button secondary" href="https://www.nomavek.com/">Visit Nomavek Lab</a>
                     </div>
                 </div>
-                <div class="cta-note">Public posting, public deployment, and image/demo use remain approval-gated.</div>
+                <div class="cta-note">Use the demo board to see how a rough input can become a clearer design decision.</div>
             </section>
 
             <footer class="site-footer">
