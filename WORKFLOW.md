@@ -35,6 +35,28 @@ Step 4: Update blog/index.json status → "published"
 Step 5: Auto-deploy (future: GitHub Pages / Vercel)
 ```
 
+## Template System
+
+The blog is not WordPress. It is a lightweight static blog with one shared article template.
+
+Single-post page design is controlled in:
+- `app.js` → `articleTemplateDefaults`
+- `app.js` → `renderArticleMarkup()`
+- `app.js` → `applyArticleTemplate()`
+- `style.css` → article template CSS variables
+
+Review route:
+- `#template-console`
+
+How it works:
+1. Edit the template settings in `#template-console` for visual review.
+2. The preview settings are saved in the browser only.
+3. Every article page reads the same template settings in that browser preview.
+4. Permanent template changes must be committed by updating `articleTemplateDefaults`, `renderArticleMarkup()`, and `style.css`.
+5. Public deployment still requires Herman approval.
+
+This gives the useful part of a CMS template system without adding WordPress, plugins, logins, or a separate theme stack.
+
 ### File States
 | Status | Location | Action |
 |--------|----------|--------|

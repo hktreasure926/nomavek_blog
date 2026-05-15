@@ -120,6 +120,45 @@ const topics = [
     ["Studio Automation", "Lean automations for briefs, files, approvals, and repeatable production."]
 ];
 
+const templateStorageKey = "nomavek-blog-article-template-v1";
+const articleTemplateDefaults = {
+    titleScale: "compact",
+    headingScale: "compact",
+    articleWidth: "standard",
+    imageMode: "auto",
+    ctaMode: "board",
+    statusVisibility: "show"
+};
+const templateOptions = {
+    titleScale: {
+        compact: "Compact title",
+        standard: "Standard title",
+        editorial: "Editorial title"
+    },
+    headingScale: {
+        compact: "Compact section titles",
+        standard: "Standard section titles"
+    },
+    articleWidth: {
+        narrow: "Narrow reading width",
+        standard: "Standard reading width",
+        wide: "Wide reading width"
+    },
+    imageMode: {
+        auto: "Auto image placement",
+        side: "Side image",
+        full: "Full-width image"
+    },
+    ctaMode: {
+        board: "View demo board",
+        lab: "Visit Nomavek Lab"
+    },
+    statusVisibility: {
+        show: "Show review status",
+        hide: "Hide review status"
+    }
+};
+
 const app = document.getElementById("app");
 const visibleArticles = articles.filter((article) => article.imageApproved !== false);
 
@@ -186,6 +225,7 @@ function renderHome() {
             </footer>
         </div>
     `;
+    applyArticleTemplate(getArticleTemplate());
 }
 
 function renderFeatured(article) {
@@ -216,15 +256,22 @@ function renderCard(article) {
 
 function renderArticle(slug) {
     const article = visibleArticles.find((item) => item.slug === slug) || visibleArticles[0];
-    app.innerHTML = `
+    const template = getArticleTemplate();
+    app.innerHTML = renderArticleMarkup(article, template);
+    applyArticleTemplate(template);
+}
+
+function renderArticleMarkup(article, template, options = {}) {
+    const cta = getTemplateCta(template);
+    return `
         <article class="article-view">
-            <a class="text-link back-link" href="#home">Back to blog</a>
+            ${options.preview ? "" : `<a class="text-link back-link" href="#home">Back to blog</a>`}
             ${renderMeta(article)}
             <h1>${article.title}</h1>
-            <div class="article-actions">
+            <div class="article-actions ${template.statusVisibility === "hide" ? "is-hidden" : ""}">
                 <span class="status-note">${article.status}</span>
             </div>
-            <section class="article-intro ${article.imageLayout === "portrait" ? "portrait" : "landscape"}">
+            <section class="article-intro ${getIntroLayout(article, template)}">
                 <section class="article-quick">
                     <strong>Quick Answer</strong>
                     <p>${article.quickAnswer}</p>
@@ -236,17 +283,91 @@ function renderArticle(slug) {
             </section>
             <section class="cta-panel">
                 <div>
-                    <h2>Turn this into a project board</h2>
-                    <p>Nomavek connects the article insight back to a practical decision workflow: one image, one brief, visual options, and a board.</p>
+                    <h2>${cta.heading}</h2>
+                    <p>${cta.body}</p>
                     <div class="cta-actions">
-                        <a class="button" href="https://www.nomavek.com/#cowork-board">View demo board</a>
+                        <a class="button" href="${cta.primaryHref}">${cta.primaryLabel}</a>
                         <a class="button secondary" href="#home">Read more blog</a>
                     </div>
                 </div>
-                <div class="cta-note">This review page does not publish the draft article to production.</div>
+                <div class="cta-note">${cta.note}</div>
             </section>
         </article>
     `;
+}
+
+function renderTemplateConsole() {
+    const template = getArticleTemplate();
+    const previewArticle = visibleArticles[0];
+    app.innerHTML = `
+        <section class="template-console">
+            <div class="template-header">
+                <div>
+                    <a class="text-link back-link" href="#home">Back to blog</a>
+                    <h1>Blog Template Console</h1>
+                    <p>This review-only screen controls the shared single-post template. Change the template once and every article page uses the same layout rules in this browser preview.</p>
+                </div>
+                <div class="template-state">
+                    <span>Review mode</span>
+                    <strong>Not published</strong>
+                </div>
+            </div>
+
+            <div class="template-layout">
+                <form class="template-controls" aria-label="Article template controls">
+                    ${renderTemplateSelect("titleScale", "Post title size", template)}
+                    ${renderTemplateSelect("headingScale", "Section title size", template)}
+                    ${renderTemplateSelect("articleWidth", "Reading width", template)}
+                    ${renderTemplateSelect("imageMode", "Image placement", template)}
+                    ${renderTemplateSelect("ctaMode", "Call to action", template)}
+                    ${renderTemplateSelect("statusVisibility", "Review status", template)}
+                    <button class="button secondary" type="button" data-reset-template>Reset template</button>
+                </form>
+
+                <section class="template-preview" aria-label="Article template preview">
+                    <div class="template-preview-bar">
+                        <span>Single-post preview</span>
+                        <a class="text-link" href="#article/${previewArticle.slug}">Open as article</a>
+                    </div>
+                    ${renderArticleMarkup(previewArticle, template, { preview: true })}
+                </section>
+            </div>
+        </section>
+    `;
+    applyArticleTemplate(template);
+    bindTemplateConsole();
+}
+
+function renderTemplateSelect(key, label, template) {
+    return `
+        <label class="template-field">
+            <span>${label}</span>
+            <select data-template-key="${key}">
+                ${Object.entries(templateOptions[key]).map(([value, text]) => `
+                    <option value="${value}" ${template[key] === value ? "selected" : ""}>${text}</option>
+                `).join("")}
+            </select>
+        </label>
+    `;
+}
+
+function bindTemplateConsole() {
+    document.querySelectorAll("[data-template-key]").forEach((control) => {
+        control.addEventListener("change", () => {
+            const template = getArticleTemplate();
+            template[control.dataset.templateKey] = control.value;
+            saveArticleTemplate(template);
+            renderTemplateConsole();
+        });
+    });
+
+    const reset = document.querySelector("[data-reset-template]");
+    if (reset) {
+        reset.addEventListener("click", () => {
+            localStorage.removeItem(templateStorageKey);
+            renderTemplateConsole();
+        });
+    }
 }
 
 function renderRelatedPost(note) {
@@ -271,6 +392,67 @@ function renderMeta(article) {
             </div>
         </div>
     `;
+}
+
+function getArticleTemplate() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(templateStorageKey) || "{}");
+        return { ...articleTemplateDefaults, ...saved };
+    } catch {
+        return { ...articleTemplateDefaults };
+    }
+}
+
+function saveArticleTemplate(template) {
+    localStorage.setItem(templateStorageKey, JSON.stringify(template));
+}
+
+function applyArticleTemplate(template) {
+    const root = document.documentElement;
+    const titleSizes = {
+        compact: "clamp(26px, 2.6vw, 36px)",
+        standard: "clamp(30px, 3.2vw, 42px)",
+        editorial: "clamp(34px, 4vw, 52px)"
+    };
+    const headingSizes = {
+        compact: "clamp(18px, 1.8vw, 24px)",
+        standard: "clamp(21px, 2.25vw, 32px)"
+    };
+    const widths = {
+        narrow: "860px",
+        standard: "980px",
+        wide: "1120px"
+    };
+
+    root.style.setProperty("--article-title-size", titleSizes[template.titleScale]);
+    root.style.setProperty("--article-h2-size", headingSizes[template.headingScale]);
+    root.style.setProperty("--article-width", widths[template.articleWidth]);
+}
+
+function getIntroLayout(article, template) {
+    if (template.imageMode === "side") return "portrait";
+    if (template.imageMode === "full") return "landscape";
+    return article.imageLayout === "portrait" ? "portrait" : "landscape";
+}
+
+function getTemplateCta(template) {
+    if (template.ctaMode === "lab") {
+        return {
+            heading: "Connect this back to Nomavek Lab",
+            body: "Nomavek turns article ideas into a practical service workflow for small architecture studios.",
+            primaryLabel: "Visit Nomavek Lab",
+            primaryHref: "https://www.nomavek.com/",
+            note: "Public posting and public website changes still need approval before release."
+        };
+    }
+
+    return {
+        heading: "Turn this into a project board",
+        body: "Nomavek connects the article insight back to a practical decision workflow: one image, one brief, visual options, and a board.",
+        primaryLabel: "View demo board",
+        primaryHref: "https://www.nomavek.com/#cowork-board",
+        note: "This review page does not publish the draft article to production."
+    };
 }
 
 function renderImage(src, alt, className) {
@@ -309,6 +491,8 @@ function route() {
     const hash = window.location.hash || "#home";
     if (hash.startsWith("#article/")) {
         renderArticle(hash.replace("#article/", ""));
+    } else if (hash === "#template-console") {
+        renderTemplateConsole();
     } else {
         renderHome();
     }
