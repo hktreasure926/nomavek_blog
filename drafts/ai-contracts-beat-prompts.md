@@ -132,13 +132,13 @@ Checkpoints:
 
 ## FAQ
 
-**Q: Is this only for big firms?**  
+**Q: Is this only for big firms?**
 A: No. Small studios benefit more, because you have less time to waste.
 
-**Q: Won’t this make the work less creative?**  
+**Q: Won’t this make the work less creative?**
 A: It reduces chaos, not creativity. You still explore — you just explore on purpose.
 
-**Q: Where does this fit in a real workflow?**  
+**Q: Where does this fit in a real workflow?**
 A: Right after you choose a massing/view. Before you do heavy refinement.
 
 ---

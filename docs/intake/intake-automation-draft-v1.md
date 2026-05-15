@@ -56,4 +56,3 @@ Goal: capture a clean project brief, then prepare a small “AI-ready package”
 - Confirm: camera locked vs flexible
 - Confirm: “one primary material direction” (yes/no)
 - Confirm: any sensitive content or privacy constraints
-
