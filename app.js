@@ -1,11 +1,43 @@
 const articles = [
     {
+        slug: "ai-images-client-presentation",
+        title: "Can Architects Use AI Images in Client Presentations?",
+        date: "2026-05-16",
+        status: "Published",
+        category: "Client Presentation",
+        tags: ["AI Images", "Studio Workflow", "Concept Boards"],
+        imageApproved: true,
+        excerpt: "Yes, but the image should be framed as a concept option, not as a finished design promise. Here is a simple presentation workflow for small studios.",
+        image: "assets/ai-client-presentation/board-wall.png",
+        imageLayout: "landscape",
+        quickAnswer: "Architects can use AI images in client presentations when the role of the image is clear: concept direction, mood, material intent, or comparison. The safer workflow is to label AI images as concept options, keep a source trail, and turn the chosen direction into a decision board before moving into real drawings.",
+        body: [
+            { type: "h2", text: "Use AI Images As Direction, Not Proof" },
+            { type: "p", text: "The common mistake is treating an AI image like a resolved design. A client may read the facade, window rhythm, material joint, shadow, or planting as a promise. That creates confusion later when the actual design needs to change." },
+            { type: "p", text: "A better way is to present each AI image as a direction. The image helps the client choose atmosphere, massing mood, material language, or level of ambition. It should not pretend to settle structure, code, cost, or construction detail." },
+            { type: "image", src: "assets/ai-client-presentation/presentation-board.png", alt: "Architecture presentation wall with AI-assisted board, model, diagrams, and material samples", layout: "landscape" },
+            { type: "h2", text: "A Simple Client Caption" },
+            { type: "p", text: "Use a short label under the image. Do not over-explain the technology. The label only needs to make the status of the image clear." },
+            { type: "code", text: "Concept option, AI-assisted.\nThis image explores mood, material direction, and light.\nIt is not a construction detail.\nAfter a direction is selected, we will develop it into drawings, specifications, and coordinated design work." },
+            { type: "h2", text: "Keep A Source Trail" },
+            { type: "p", text: "For each image option, keep a small record. It does not need to be formal, but it should be enough for the studio to understand where the option came from and why it was shown." },
+            { type: "list", items: ["Input image or sketch used", "Reference images used", "Prompt or short instruction", "Date and version label", "One sentence explaining the design intention"] },
+            { type: "h2", text: "Show Fewer Options" },
+            { type: "p", text: "Twelve beautiful images can make a client less confident. Three clear options usually work better: one safe direction, one stronger design move, and one more experimental option. The point is not volume. The point is decision quality." },
+            { type: "image", src: "assets/ai-client-presentation/option-check.png", alt: "Three architecture options compared with decision markers", layout: "landscape" },
+            { type: "h2", text: "Turn The Chosen Image Into A Board" },
+            { type: "p", text: "The real value starts after the client reacts. The selected image should become a board with a brief summary, design direction, rationale, risks, and next steps. That board is what keeps the project moving instead of drifting between image variations." },
+            { type: "h2", text: "Nomavek Takeaway" },
+            { type: "p", text: "Nomavek Lab is building this workflow around boards: one project input, a small set of AI-assisted directions, and a clear record of what the studio should develop next. The image is useful, but the board is the working deliverable." }
+        ]
+    },
+    {
         slug: "ai-contracts-beat-prompts",
         title: "Why Architects Should Treat AI Like a Contract, Not a Prompt",
         date: "2026-05-14",
         status: "Draft for review",
         category: "Workflow Guides",
-        tags: ["AI Workflow", "Architecture Practice", "AEO"],
+        tags: ["AI Workflow", "Architecture Practice"],
         imageApproved: true,
         excerpt: "Prompts are fragile. Contracts are durable. Here is a practical way to brief AI so your studio gets consistent outputs across a project.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
@@ -35,7 +67,7 @@ const articles = [
         date: "2026-04-24",
         status: "Draft for review",
         category: "AI Practice",
-        tags: ["Agentic AI", "Automation", "AEO"],
+        tags: ["Agentic AI", "Automation"],
         imageApproved: true,
         excerpt: "A practical guide for design firms on agentic systems, multi-step workflows, and where human judgment still matters.",
         image: "https://www.nomavek.com/landing/nomavek-east-asia-render.png",
@@ -221,9 +253,6 @@ function renderArticle(slug) {
             <a class="text-link back-link" href="#home">Back to blog</a>
             ${renderMeta(article)}
             <h1>${article.title}</h1>
-            <div class="article-actions">
-                <span class="status-note">${article.status}</span>
-            </div>
             <section class="article-intro ${article.imageLayout === "portrait" ? "portrait" : "landscape"}">
                 <section class="article-quick">
                     <strong>Quick Answer</strong>
@@ -243,7 +272,7 @@ function renderArticle(slug) {
                         <a class="button secondary" href="#home">Read more blog</a>
                     </div>
                 </div>
-                <div class="cta-note">This review page does not publish the draft article to production.</div>
+                <div class="cta-note">Use the demo board to see how a rough input can become a clearer design decision.</div>
             </section>
         </article>
     `;
@@ -295,6 +324,7 @@ function renderBlock(block) {
     if (block.type === "p") return `<p>${block.text}</p>`;
     if (block.type === "list") return `<ul>${block.items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
     if (block.type === "code") return `<pre><code>${escapeHtml(block.text)}</code></pre>`;
+    if (block.type === "image") return renderImage(block.src, block.alt, `body-image ${block.layout || ""}`);
     return "";
 }
 

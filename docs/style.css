@@ -595,11 +595,14 @@ a {
     background: #211f1b;
     color: #f7f4ef;
     line-height: 1.55;
+    white-space: pre-wrap;
 }
 
 .article-body code {
     font-family: "SFMono-Regular", Consolas, monospace;
     font-size: 13px;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .article-body blockquote {
@@ -607,6 +610,20 @@ a {
     padding-left: 18px;
     border-left: 2px solid var(--line-strong);
     color: var(--ink-soft);
+}
+
+.body-image {
+    margin: 28px 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--paper);
+}
+
+.body-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .back-link {

@@ -1,13 +1,24 @@
 {
   "meta": {
-    "title": "Studio Nomad Blog",
-    "description": "AI architecture workflow guides, prompt libraries, and rendering techniques",
-    "url": "https://studionomad.vercel.app",
+    "title": "Nomavek Blog",
+    "description": "AI architecture notes for design studios tracking tools, decisions, visualization, and practice workflows",
+    "url": "https://blog.nomavek.com",
     "repo": "https://github.com/hktreasure926/arch-prompt-db",
     "workflow": "Draft → Review → Approve → Publish"
   },
   "drafts": [],
   "published": [
+    {
+      "slug": "ai-images-client-presentation",
+      "title": "Can Architects Use AI Images in Client Presentations?",
+      "date": "2026-05-16",
+      "status": "published",
+      "tags": ["ai-images", "client-presentation", "studio-workflow", "concept-boards"],
+      "excerpt": "Yes, but the image should be framed as a concept option, not as a finished design promise. Here is a simple presentation workflow for small studios.",
+      "file": "posts/ai-images-client-presentation.md",
+      "ai-summary": "Practical guide for small architecture studios using AI images in client presentations, focusing on concept labels, source trails, fewer options, and decision boards.",
+      "image": "assets/ai-client-presentation/board-wall.png"
+    },
     {
       "slug": "20min-competition-entry",
       "title": "How to Make a Winning Architectural Competition Entry in 20 Minutes (Using Only Your Phone)",
