@@ -267,6 +267,14 @@ a {
     margin-bottom: 18px;
 }
 
+.featured-card.text-only {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.featured-card.text-only .featured-copy {
+    max-width: 760px;
+}
+
 .featured-media {
     position: relative;
     min-height: 340px;
@@ -380,6 +388,11 @@ a {
     min-height: 430px;
     flex-direction: column;
     overflow: hidden;
+}
+
+.article-card.text-only {
+    min-height: 360px;
+    padding-top: 4px;
 }
 
 .image-frame {
@@ -546,6 +559,10 @@ a {
 .article-intro.landscape {
     display: grid;
     gap: 22px;
+}
+
+.article-intro.landscape .article-quick:only-child {
+    max-width: 820px;
 }
 
 .article-intro.portrait .visual-panel {

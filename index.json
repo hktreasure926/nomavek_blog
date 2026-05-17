@@ -9,6 +9,16 @@
   "drafts": [],
   "published": [
     {
+      "slug": "ai-understand-project-not-prompt",
+      "title": "Can AI Understand A Project, Not Just A Prompt?",
+      "date": "2026-05-17",
+      "status": "published",
+      "tags": ["project-memory", "ai-workflow", "architecture-practice", "client-boards"],
+      "excerpt": "AI image tools can generate fast options, but they do not remember your project logic. Small studios need project memory, decision logs, and boards.",
+      "file": "posts/ai-understand-project-not-prompt.md",
+      "ai-summary": "Explains the difference between image-generation tools and project-aware agent workflows, then gives a simple studio-ready method for keeping project context stable."
+    },
+    {
       "slug": "ai-images-client-presentation",
       "title": "Can Architects Use AI Images in Client Presentations?",
       "date": "2026-05-16",
