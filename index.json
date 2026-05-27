@@ -10,13 +10,14 @@
   "published": [
     {
       "slug": "ai-understand-project-not-prompt",
-      "title": "Can AI Understand A Project, Not Just A Prompt?",
-      "date": "2026-05-17",
+      "title": "Can an AI Board Remember the Project, Not Just the Prompt?",
+      "date": "2026-05-27",
       "status": "published",
-      "tags": ["project-memory", "ai-workflow", "architecture-practice", "client-boards"],
-      "excerpt": "AI image tools can generate fast options, but they do not remember your project logic. Small studios need project memory, decision logs, and boards.",
+      "tags": ["ai-workflow", "architecture-practice", "project-memory", "nomavek-lab"],
+      "excerpt": "AI image tools are getting better, but architecture studios need more than one good output. They need a board that remembers the brief, the reference, the option, and the next design decision.",
       "file": "posts/ai-understand-project-not-prompt.md",
-      "ai-summary": "Explains the difference between image-generation tools and project-aware agent workflows, then gives a simple studio-ready method for keeping project context stable."
+      "ai-summary": "Explains why project memory matters for architecture AI workflows, using the idea of an AI board that keeps references, outputs, brief notes, constraints, and decision questions together.",
+      "image": "assets/ai-board-project-memory/high-rise-options-memory-dashboard.png"
     },
     {
       "slug": "ai-images-client-presentation",
