@@ -168,27 +168,6 @@ const articles = [
     }
 ];
 
-const relatedPosts = [
-    {
-        meta: "Instagram seed / May 5, 2026",
-        title: "For freelancer architects and small studios",
-        text: "The first bridge from the Nomavek Instagram post: start with one project image, one design question, and one board instead of chasing another prompt trick.",
-        href: "https://www.instagram.com/p/DX9ooGUFIMG/",
-        linkText: "View seed post",
-        image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
-        alt: "Sketch image candidate for small studio AI workflow note"
-    },
-    {
-        meta: "Related post / Draft",
-        title: "What small studios should ask before adopting AI tools",
-        text: "Does the tool help you decide, or only help you generate? That question should shape the blog, Instagram, and the demo board direction.",
-        href: "#article/ai-contracts-beat-prompts",
-        linkText: "Read the draft direction",
-        image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
-        alt: "Facade detail image candidate for AI adoption related post"
-    }
-];
-
 const topics = [
     ["AI Design Tools", "Which tools matter, when they matter, and what they change in practice."],
     ["Rendering & Visualization", "From fast outputs to consistent image sets and client-facing boards."],
@@ -205,17 +184,6 @@ function renderHome() {
     const featured = visibleArticles[0];
     app.innerHTML = `
         <div class="page-shell">
-            <section class="hero" id="home">
-                <div class="hero-copy">
-                    <h1>Nomavek Blog</h1>
-                    <p class="hero-summary">Practical notes on AI tools, architectural design work, visualization, client presentation, and small studio workflows.</p>
-                    <div class="hero-actions">
-                        <a class="button" href="#latest-blog">View latest blog</a>
-                        <a class="button secondary" href="https://www.nomavek.com/#cowork-board">View demo board</a>
-                    </div>
-                </div>
-            </section>
-
             <section class="section latest-section" id="latest-blog" aria-labelledby="latest-title">
                 <div class="section-title">
                     <h2 id="latest-title">Latest blog</h2>
@@ -234,16 +202,6 @@ function renderHome() {
                 </div>
                 <div class="topic-grid">
                     ${topics.map(([title, text]) => `<div class="topic-card"><strong>${title}</strong><span>${text}</span></div>`).join("")}
-                </div>
-            </section>
-
-            <section class="section" id="related-posts" aria-labelledby="related-title">
-                <div class="section-title">
-                    <h2 id="related-title">Related posts</h2>
-                    <p>Short posts connected to Instagram, demos, and deeper blog articles.</p>
-                </div>
-                <div class="field-layout">
-                    ${relatedPosts.map(renderRelatedPost).join("")}
                 </div>
             </section>
 
@@ -296,7 +254,7 @@ function renderArticle(slug) {
     const article = visibleArticles.find((item) => item.slug === slug) || visibleArticles[0];
     app.innerHTML = `
         <article class="article-view">
-            <a class="text-link back-link" href="#home">Back to blog</a>
+            <a class="text-link back-link" href="#latest-blog">Back to blog</a>
             ${renderMeta(article)}
             <h1>${article.title}</h1>
             <section class="article-intro ${article.imageLayout === "portrait" ? "portrait" : "landscape"}">
@@ -315,23 +273,11 @@ function renderArticle(slug) {
                     <p>Nomavek connects the article insight back to a practical decision workflow: one image, one brief, visual options, and a board.</p>
                     <div class="cta-actions">
                         <a class="button" href="https://www.nomavek.com/#cowork-board">View demo board</a>
-                        <a class="button secondary" href="#home">Read more blog</a>
+                        <a class="button secondary" href="#latest-blog">Read more blog</a>
                     </div>
                 </div>
                 <div class="cta-note">Use the demo board to see how a rough input can become a clearer design decision.</div>
             </section>
-        </article>
-    `;
-}
-
-function renderRelatedPost(note) {
-    return `
-        <article class="field-note">
-            ${renderImage(note.image, note.alt, "field-image-wrap")}
-            <div class="meta">${note.meta}</div>
-            <h3>${note.title}</h3>
-            <p>${note.text}</p>
-            <a class="text-link" href="${note.href}">${note.linkText}</a>
         </article>
     `;
 }
@@ -382,13 +328,20 @@ function escapeHtml(value) {
 }
 
 function route() {
-    const hash = window.location.hash || "#home";
+    const hash = window.location.hash || "#latest-blog";
     if (hash.startsWith("#article/")) {
         renderArticle(hash.replace("#article/", ""));
     } else {
         renderHome();
     }
-    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+    requestAnimationFrame(() => {
+        const target = document.querySelector(hash);
+        if (target && hash.startsWith("#")) {
+            target.scrollIntoView({ block: "start", behavior: "auto" });
+            return;
+        }
+        window.scrollTo({ top: 0, behavior: "auto" });
+    });
 }
 
 window.addEventListener("hashchange", route);
