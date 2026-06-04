@@ -10,6 +10,9 @@ AI architecture workflow guides, prompt libraries, and rendering techniques for 
 
 | Date | Title | Tags |
 |------|-------|------|
+| 2026-06-02 | [Project Memory Is the Missing Layer in Architecture AI](./posts/project-memory-demo-entry.md) | AI Workflow, Architecture Practice, Project Memory |
+| 2026-05-27 | [Can an AI Board Remember the Project, Not Just the Prompt?](./posts/ai-understand-project-not-prompt.md) | AI Workflow, Architecture Practice, Project Memory |
+| 2026-05-16 | [Can Architects Use AI Images in Client Presentations?](./posts/ai-images-client-presentation.md) | AI Images, Studio Workflow, Concept Boards |
 | 2026-04-21 | [15 Urban Waterfront Site Transformation Prompts](./posts/15-urban-schemes.md) | S11-S12, Urban Design, Prompt Library |
 | 2026-04-15 | [S11 + S12 Prompt Framework Guide](./posts/s11-s12-framework.md) | S11-S12, Prompt Engineering, Framework |
 
