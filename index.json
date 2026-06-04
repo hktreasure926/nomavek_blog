@@ -9,17 +9,6 @@
   "drafts": [],
   "published": [
     {
-      "slug": "project-memory-demo-entry",
-      "title": "Project Memory Is the Missing Layer in Architecture AI",
-      "date": "2026-06-02",
-      "status": "published",
-      "tags": ["ai-workflow", "architecture-practice", "project-memory", "nomavek-lab"],
-      "excerpt": "AI image tools can create options quickly, but small studios need a workflow that remembers the reference, constraints, selected direction, and next design question.",
-      "file": "posts/project-memory-demo-entry.md",
-      "ai-summary": "Explains project memory as the missing layer between AI image generation and useful architecture workflow, using Nomavek's cowork board as the practical example.",
-      "image": "assets/project-memory-demo-entry/project-memory-demo-board-ui.png"
-    },
-    {
       "slug": "ai-understand-project-not-prompt",
       "title": "Can an AI Board Remember the Project, Not Just the Prompt?",
       "date": "2026-05-27",

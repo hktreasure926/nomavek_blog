@@ -1,30 +1,5 @@
 const articles = [
     {
-        slug: "project-memory-demo-entry",
-        title: "Project Memory Is the Missing Layer in Architecture AI",
-        date: "2026-06-02",
-        status: "Published",
-        category: "Workflow Guides",
-        tags: ["AI Workflow", "Architecture Practice", "Project Memory"],
-        imageApproved: true,
-        image: "assets/project-memory-demo-entry/project-memory-demo-board-ui.png",
-        imageLayout: "landscape",
-        excerpt: "AI image tools can create options quickly, but small studios need a workflow that remembers the reference, constraints, selected direction, and next design question.",
-        quickAnswer: "Most AI image workflows stop after one output. Architecture work needs project memory: reference, output, constraints, decision, and next move kept together so the studio can continue from the last decision.",
-        body: [
-            { type: "h2", text: "The Image Is Not The Whole Project" },
-            { type: "p", text: "A generated render can look convincing and still be difficult to use. The problem is not only image quality. The surrounding project logic often disappears: what reference started the direction, what constraint shaped the option, which image was selected, and what still needs to be tested." },
-            { type: "h2", text: "What Project Memory Should Keep Visible" },
-            { type: "list", items: ["Reference: the image, sketch, site photo, or direction that started the work", "Output: the AI-generated option or board that came from it", "Constraints: height, program, visual language, site condition, or client preference", "Decision: what the studio selected, rejected, or still needs to compare", "Next move: generate another option, make a diagram, refine the facade, or prepare a cleaner board"] },
-            { type: "h2", text: "Why This Matters For AI Architecture Tools" },
-            { type: "p", text: "Many AI tools are still built around a single prompt or a single image. That is useful for fast exploration, but architecture practice usually moves through a chain: reference, option, review, decision, next version, presentation." },
-            { type: "h2", text: "Where Nomavek Is Going" },
-            { type: "p", text: "Nomavek is being shaped around a project-memory workflow for small studios: upload a reference or brief, generate options, keep constraints and notes beside the output, mark a selected direction, and prepare the next board or design step." },
-            { type: "h2", text: "Takeaway" },
-            { type: "p", text: "Better images are useful. But for architecture work, the bigger shift is project memory: a workflow that remembers why an image exists, what it should become, and what decision comes next." }
-        ]
-    },
-    {
         slug: "ai-understand-project-not-prompt",
         title: "Can an AI Board Remember the Project, Not Just the Prompt?",
         date: "2026-05-27",
