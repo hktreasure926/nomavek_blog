@@ -5,9 +5,9 @@ Status: private approval note. Do not publish without Herman approval.
 ## Blog Draft
 
 - Draft: `/Users/main/Documents/020_Vibe Coding/nomavek_blog/drafts/ai-architectural-assistant-2026.md`
-- Working title: `Will AI Replace the Architectural Assistant in 2026?`
+- Working title: `AI Will Replace the Architectural Assistant in 2026, Not the Architect`
 - Public copy does not use `AEO`.
-- Main angle: AI replaces repetitive assistant-layer tasks first, not the architect's judgment.
+- Main angle: Novie as architectural coworker brain; AI replaces repetitive assistant-layer tasks first, not the architect's judgment.
 
 ## Image Candidate
 

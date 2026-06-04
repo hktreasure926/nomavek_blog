@@ -1,5 +1,5 @@
 ---
-title: "Will AI Replace the Architectural Assistant in 2026?"
+title: "AI Will Replace the Architectural Assistant in 2026, Not the Architect"
 date: "2026-06-04"
 status: draft
 approved_image: ""
@@ -9,14 +9,15 @@ tags:
   - "Architecture Practice"
   - "AI Assistant"
   - "MCP"
-excerpt: "AI is moving from prompt boxes into CAD, BIM, Rhino, and space-planning workflows. The role most exposed in 2026 is not the architect, but the repetitive production assistant layer."
-ai-summary: "Explains why AI may replace parts of the architectural assistant role in 2026, especially drafting support, model querying, option generation, space planning, and repetitive documentation tasks, while keeping architect judgment central."
+  - "Novie"
+excerpt: "AI is moving from prompt boxes into CAD, BIM, Rhino, layout generation, and project-memory workflows. The first role it changes is the repetitive architectural assistant layer."
+ai-summary: "Explains why AI will replace parts of the architectural assistant role in 2026, using MCP, RhinoMCP, Graphisoft AI Assistant, Autodesk Forma Building Layout Explorer, qbiq space planning, and Nomavek Novie as evidence."
 ---
 
-# Will AI Replace the Architectural Assistant in 2026?
+# AI Will Replace the Architectural Assistant in 2026, Not the Architect
 
 > **Date:** 2026-06-04
-> **Tags:** AI Workflow, Architecture Practice, AI Assistant, MCP
+> **Tags:** AI Workflow, Architecture Practice, AI Assistant, MCP, Novie
 > **Category:** AI Practice
 
 ---
@@ -25,145 +26,264 @@ ai-summary: "Explains why AI may replace parts of the architectural assistant ro
 
 AI will not replace the architect in 2026.
 
-But it will start replacing parts of the **architectural assistant** role: repetitive model queries, early option studies, image-to-board preparation, space-planning tests, drawing clean-up, and documentation searches.
+But it will replace parts of the architectural assistant role: reading the brief, checking the board, preparing first-pass options, querying model data, testing layouts, summarizing design issues, and returning reviewable proposal cards.
 
-The shift is not only better image generation. The important change is that AI can now sit closer to the working tools: Archicad, Rhino, Revit, space-planning systems, files, and project boards.
+The important shift is not "better prompting." It is that AI is moving closer to working project tools: BIM, CAD, Rhino, Grasshopper, space-planning systems, project folders, and board-based review workflows.
 
-For small studios, the question is no longer, "Can AI make a render?"
+For Nomavek, this means Novie should not be a Prompt Matcher or a normal chat assistant.
 
-The better question is: **which assistant tasks should AI handle before a human architect reviews the decision?**
+**Novie should be an architectural coworker brain.**
 
----
-
-## Why 2026 Feels Different
-
-Architecture AI is moving out of the loose prompt box.
-
-Autodesk's 2026 AI Pulse reports that AI use is already normal across design-and-make industries: 98% of surveyed leaders use at least one AI tool, 84% say AI has improved productivity, and 59% already use or plan to use agentic AI within a year.
-
-That matters because agentic AI is not just a chat reply. It is a system that can plan a task, call tools, read project material, and prepare the next step.
-
-For an architecture studio, that looks less like "make this image nicer" and more like:
-
-- read the brief
-- find the relevant drawing or model data
-- generate a first test
-- prepare options
-- summarize the trade-offs
-- package the result for human review
-
-That is exactly the layer where architectural assistants spend a lot of time.
+It reads the project board, remembers design decisions, calls tools, and returns organized design artifacts for human approval.
 
 ---
 
-## The Assistant Work That AI Can Take First
+## Why This Is Happening Now
 
-The first tasks to change are not the highest judgment tasks.
+The market is moving from single-output AI toward project-aware assistants.
 
-They are the tasks that already follow a repeatable pattern:
+Autodesk's 2026 AI Pulse reports that AI adoption is already mainstream across design-and-make industries: 98% of surveyed leaders use at least one AI tool, 84% say AI has increased productivity, and 59% already use or plan to use agentic AI within a year.
 
-1. **Model and drawing search**: find walls, rooms, elements, sheets, or views by criteria.
-2. **Option setup**: prepare three massing, layout, or visual directions from the same brief.
-3. **Space-planning tests**: generate early layouts from program requirements, then let humans check fit and logic.
-4. **Board preparation**: place references, outputs, constraints, and decision notes into a readable review surface.
-5. **Documentation support**: summarize PDFs, requirements, client notes, and open questions.
-6. **Rhino or Grasshopper automation**: run scripted modeling steps or inspect scene/model data through tool connections.
+That matters for architects because agentic AI changes the working pattern. Instead of one prompt producing one answer, the assistant can:
 
-This does not remove the architect's role. It removes the slow first pass.
+- read context
+- decide what matters
+- call a tool
+- return an artifact
+- wait for human approval
+- remember the decision
 
-The architect still decides what matters, what is buildable, what is responsible, and what should be shown to a client.
-
----
-
-## Tool Connection Is The Big Change
-
-The most important development is tool connection.
-
-Model Context Protocol (MCP) is one example. MCP lets an AI application connect to external tools through servers that expose actions, data, and reusable prompts. In practice, this means an AI assistant can discover what tools are available, call a tool, and receive structured results.
-
-For architects, that changes the expectation. If an AI assistant can connect to a model, a file system, a drawing database, or a geometry tool, then the assistant is no longer only writing text. It can help act inside the workflow.
-
-OpenAI's Codex documentation now describes how Codex can connect to MCP servers through `config.toml`, including local STDIO servers and remote HTTP servers. That is important because Codex is already used as a work agent. A future architecture setup can connect Codex-like agents to project tools through the same pattern.
+That is much closer to how an architectural assistant works in a studio.
 
 ---
 
-## Rhino MCP Shows Where This Is Going
+## The Assistant Layer Is The First Layer To Change
 
-There are already community experiments connecting Rhino to AI through MCP.
+The architect still owns judgment: concept, responsibility, client direction, site logic, feasibility, and final decision.
 
-The `reer-ide/rhino_mcp` project describes RhinoMCP as a bridge between Rhino, Grasshopper, and AI through MCP. It exposes Rhino actions such as object manipulation, layer management, scene inspection, selected-object information, Python execution inside Rhino, and RhinoScriptSyntax documentation lookup.
+The assistant layer is different. A lot of assistant work is structured and repeatable:
 
-The current project is framed around Claude, and its Grasshopper side is still under development. So this should not be treated as a finished production workflow.
+- "What is on this board?"
+- "What is the main design issue?"
+- "Which option should we develop next?"
+- "Can this become a diagram?"
+- "Which geometry or material should stay fixed?"
+- "What changed from the previous version?"
+- "Can you prepare a cleaner proposal card?"
 
-But the direction is clear:
+This is exactly where AI becomes useful.
+
+It does not need to be a full architect. It needs to become a reliable coworker that prepares the next reviewable step.
+
+---
+
+## Tool Connection Makes AI More Like A Coworker
+
+Model Context Protocol (MCP) is one reason this shift matters.
+
+MCP gives AI applications a standard way to connect to external tools and data. The official MCP architecture describes a client-server pattern where an AI application discovers available tools, calls them, and receives structured results. OpenAI's Codex documentation now supports MCP servers through local STDIO and remote HTTP configurations.
+
+For architecture, the important point is simple:
 
 ```text
 AI assistant
--> MCP server
--> Rhino / Grasshopper
--> model inspection or geometry action
--> human review
+-> project data or tool
+-> structured result
+-> board artifact
+-> human approval
 ```
 
-That is much closer to replacing repetitive assistant production work than another image prompt tool.
+That is different from a chatbot giving advice.
 
-For example, an architect could ask for a quick massing cleanup, facade module test, layer inspection, or option setup. The AI assistant would not be "designing the building" alone. It would be doing the first technical pass that a human checks.
-
----
-
-## Space Planning Is Another Assistant Layer
-
-Space planning is also moving into AI-assisted workflows.
-
-qbiq describes an AI platform for office space planning that generates multiple layout alternatives from project requirements, with outputs such as floor plans, 3D visualizations, architectural programs, quantity estimates, and Revit/CAD models. It also makes a useful point for architects: a 99% accurate plan can still fail if the remaining 1% is wrong, so human review remains part of the process.
-
-Graphisoft's AI Solutions page points in a similar direction. Its coming iterative design engine is described as a way to generate multiple massing and layout options from goals and constraints such as floor area, height, or spacing. Its planned MCP support is also framed around giving AI controlled visibility into model data, documentation structure, and project standards.
-
-This is the real 2026 pattern:
-
-- AI creates the first options.
-- The architect reviews the logic.
-- The board records why one option survives.
+It means an assistant can read, inspect, query, or prepare material inside a project workflow.
 
 ---
 
-## What Small Studios Should Do Now
+## Rhino MCP Shows The Direction
 
-Small studios should not wait for a perfect all-in-one AI architect.
+The `reer-ide/rhino_mcp` project is a useful signal.
 
-They should identify the assistant tasks that are already repeatable and turn them into reviewable workflows:
+It connects Rhino and Grasshopper to an AI assistant through MCP. Its current Rhino tools include scene inspection, layer management, selected-object reading, viewport capture, Python execution inside Rhino, object metadata queries, and RhinoScriptSyntax documentation lookup.
 
-- one brief intake format
-- one image/reference input format
-- one option-board format
-- one review checklist
-- one "what changed and why" note
+The project is community-built and still experimental. Grasshopper support is marked as under development. It should not be treated as a finished production system.
 
-This is where AI becomes useful without becoming reckless.
+But the direction is important:
 
-If the assistant task is repeatable, AI can probably help. If the task needs client judgment, site responsibility, compliance, or design authorship, the architect must stay in charge.
+```text
+AI does not only describe the model.
+AI can inspect the model and prepare an action.
+```
+
+For a small studio, that could mean:
+
+- read the current model state
+- identify selected geometry
+- check layer organization
+- calculate simple quantities
+- prepare a facade-module test
+- generate a first Python script for review
+
+This is architectural assistant work.
 
 ---
 
-## Nomavek Lab Takeaway
+## BIM Assistants Are Moving The Same Way
 
-Nomavek Lab is being shaped around this shift.
+Graphisoft's AI Assistant is another signal. It is built into Archicad and MEP Designer, and its listed capabilities include product knowledge, domain questions, BIM queries, AI Visualizer integration, and project document spaces.
 
-The target is not an AI that pretends to be an architect. The target is a board workflow where AI can act like a fast architectural assistant:
+The most relevant parts are not marketing claims about AI. They are practical assistant tasks:
 
-- organize the brief
-- create visual or layout options
-- keep project memory visible
-- prepare the review board
-- leave the decision to the architect
+- selecting model elements by natural language
+- querying BIM information
+- generating visual concepts from inside the workflow
+- turning PDFs into a project knowledge base
+- keeping requirements and client expectations close to the model
 
-That is the practical opportunity for 2026. AI replaces the repetitive assistant layer first. The architect's value moves higher: setting direction, checking judgment, and deciding what the project should become.
+Graphisoft also describes planned MCP support that gives AI controlled visibility into model data, documentation structure, and project standards.
+
+That is very close to the Novie direction: read the project, understand the board, act inside a controlled workflow, and keep the architect in charge.
+
+---
+
+## Space Planning Is Also Becoming Assistant Work
+
+Autodesk's Building Layout Explorer in Forma Site Design is a clear example of AI moving into early layout work. Autodesk describes it as a generative AI capability that helps teams generate and evaluate floor plan options from a massing model before detailed decisions are locked in.
+
+The useful point is not that AI makes "more options."
+
+The useful point is that AI can create first-pass layouts inside a project context, so architects can evaluate trade-offs earlier.
+
+qbiq makes a similar case for office space planning. Its platform generates multiple layout alternatives from requirements and can provide floor plans, 3D visualizations, programs, quantities, and Revit/CAD outputs.
+
+Again, the pattern is the same:
+
+```text
+brief / model / constraints
+-> first-pass options
+-> human review
+-> decision record
+```
+
+This is not replacing the architect. It is replacing the repetitive preparation layer before review.
+
+---
+
+## What This Means For Novie
+
+Novie should not be positioned as:
+
+- a prompt matcher
+- a normal chatbot
+- another render tool
+- a wrapper around S1/S2/S3
+
+Novie should be positioned as:
+
+**an architectural coworker brain that reads the project board, remembers design decisions, calls tools, and returns organized design artifacts for human approval.**
+
+The Cowork Board is not the brain. The Cowork Board is where Novie shows work, pins images, organizes proposal cards, and asks the architect to confirm.
+
+In architect language:
+
+Novie looks at the project folder, looks at the pin-up board, understands what this round is trying to move forward, then proposes one clear design card for review.
+
+---
+
+## Novie Brain v1
+
+The first useful Novie MVP is not another render feature.
+
+It is **Novie Brain v1**:
+
+| Module | What it does | Output |
+| --- | --- | --- |
+| project-context | remembers brief, site, client goal, programme, constraints, approved and rejected directions | hidden project brief |
+| board-observer | reads images, renders, notes, and decisions already on the Cowork Board | board state summary |
+| architectural-diagnosis | judges the current design issue: scale, material, camera, spatial logic, or story | diagnosis card |
+| tool-router | chooses the next action: render, touchup, diagram, style, viewpoint, or brief extraction | selected next action |
+| artifact-return | turns the result into a board card, note, image, or proposal block | cowork board artifact |
+| memory-writer | records user edits, likes, dislikes, approvals, and rejected directions | decision log |
+
+That is the minimum system that makes Novie feel like a real assistant.
+
+---
+
+## The Diagnosis Card Should Be Short
+
+Novie should not write long essays inside the product.
+
+Each turn should return a clear diagnosis card:
+
+```text
+Novie sees:
+This looks like an early massing / render / diagram stage.
+
+Main issue:
+The proposal needs stronger camera / material / spatial logic / scale / story.
+
+Suggested next step:
+Use Massing Render / Style Swap / Make Diagram / Change Angle because ...
+
+Keep fixed:
+Massing / geometry / floor proportion / design intent.
+
+Change:
+Material / atmosphere / camera / context / activity.
+
+Question:
+Do you want to keep this direction or test another route?
+```
+
+This is enough. It gives the architect a useful review step without making Novie feel like a lecture.
+
+---
+
+## Why This Fits The Current Nomavek Repo
+
+The current Studio V2 repo already has the skeleton.
+
+The `/api/agent/route.ts` path already handles message and image input, resolves intent, runs S7 orchestration, and returns a Gemma response. `runS7Orchestration()` already contains the T9 analysis, T11 prompt match, and S1/S2/S3 route selection. The existing `proposal-editor.ts` already has fields like design intent, material direction, atmosphere, camera, preserve constraints, and change constraints.
+
+That means the next step should not be a bigger prompt library.
+
+The next step should be a thin internal brain layer before S7:
+
+```text
+user message / image
+-> project context
+-> board observer
+-> architectural diagnosis
+-> tool router
+-> existing S7 path
+-> proposal payload
+-> board card
+-> memory write suggestion
+```
+
+This keeps the current render flow working, but makes the assistant more architectural.
+
+---
+
+## Practical Takeaway
+
+AI will replace the repetitive architectural assistant layer first.
+
+For Nomavek, the product answer is not to add more rendering modes. It is to make Novie understand the project before it suggests the next move.
+
+The first product slice should be:
+
+1. Project Context
+2. Diagnosis Card
+3. Memory-ready RenderTurn
+
+Once those are working, Novie stops feeling like a packaged prompt matcher and starts feeling like an architectural coworker.
 
 ---
 
 ## Sources Checked
 
 - Autodesk, 2026 State of Design & Make: AI Pulse: https://www.autodesk.com/design-make/articles/2026-ai-pulse
+- Autodesk, Building Layout Explorer in Forma Site Design: https://adsknews.autodesk.com/en/news/building-layout-explorer-in-autodesk-forma/
 - Graphisoft, AI Solutions: https://www.graphisoft.com/en-us/plans-and-products/ai-solutions/
 - OpenAI Developers, Model Context Protocol for Codex: https://developers.openai.com/codex/mcp/
 - Model Context Protocol, Architecture overview: https://modelcontextprotocol.io/docs/learn/architecture
