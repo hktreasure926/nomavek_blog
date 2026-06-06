@@ -10,6 +10,7 @@ AI architecture workflow guides, prompt libraries, and rendering techniques for 
 
 | Date | Title | Tags |
 |------|-------|------|
+| 2026-06-04 | [Will AI Replace the Architectural Assistant in 2026?](./posts/ai-architectural-assistant-2026.md) | AI Workflow, Architecture Practice, AI Assistant |
 | 2026-04-21 | [15 Urban Waterfront Site Transformation Prompts](./posts/15-urban-schemes.md) | S11-S12, Urban Design, Prompt Library |
 | 2026-04-15 | [S11 + S12 Prompt Framework Guide](./posts/s11-s12-framework.md) | S11-S12, Prompt Engineering, Framework |
 

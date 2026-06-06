@@ -1,5 +1,32 @@
 const articles = [
     {
+        slug: "ai-architectural-assistant-2026",
+        title: "Will AI Replace the Architectural Assistant in 2026?",
+        date: "2026-06-04",
+        status: "Published",
+        category: "AI Practice",
+        tags: ["AI Workflow", "Architecture Practice", "AI Assistant"],
+        imageApproved: true,
+        image: "assets/ai-architectural-assistant-2026/ai-assistant-cad-space-planning.png",
+        imageLayout: "landscape",
+        excerpt: "RTX Spark shows why architecture AI is moving from prompt boxes into assistant work: site modeling, layout tests, tool handoffs, rendering, and human review.",
+        quickAnswer: "AI will not replace the architect in 2026. It will reduce the need for the traditional architectural assistant layer: reading the brief, preparing first-pass options, modeling early geometry, testing layouts, moving files between tools, and returning reviewable design options.",
+        body: [
+            { type: "h2", text: "Why This Is Happening Now" },
+            { type: "p", text: "The market is moving from single-output AI toward project-aware assistants. Autodesk's 2026 AI Pulse reports that AI adoption is already mainstream across design-and-make industries, and agentic AI is becoming part of the near-term workflow." },
+            { type: "h2", text: "RTX Spark Shows The Direction" },
+            { type: "p", text: "The RTX Spark house-design demo is useful because the architect still gives the idea, site, sketches, mood board, and design intent. The agent starts taking over the assistant work: opening Rhino, shaping the site, testing building forms, generating layout, exporting into Blender, and using Flux 2 to help make photoreal views." },
+            { type: "h2", text: "The Assistant Layer Changes First" },
+            { type: "list", items: ["Read the project board", "Identify the main design issue", "Prepare one next option", "Keep approved constraints visible", "Return a cleaner proposal card for human review"] },
+            { type: "h2", text: "Tool Connection Makes AI More Like A Coworker" },
+            { type: "p", text: "MCP, RhinoMCP-style experiments, BIM assistants, and AI space-planning tools all point in the same direction: AI is moving closer to the project tools, not just the prompt box." },
+            { type: "h2", text: "What This Means For Novie" },
+            { type: "p", text: "Novie should be an architectural coworker brain that reads the project board, remembers design decisions, calls tools, and returns organized design artifacts for human approval. The Cowork Board is where that work becomes visible." },
+            { type: "h2", text: "Nomavek Takeaway" },
+            { type: "p", text: "The first product slice should be project context, a short diagnosis card, and a memory-ready render turn. That makes Novie feel less like a packaged prompt matcher and more like a useful architectural coworker." }
+        ]
+    },
+    {
         slug: "ai-understand-project-not-prompt",
         title: "Can an AI Board Remember the Project, Not Just the Prompt?",
         date: "2026-05-27",

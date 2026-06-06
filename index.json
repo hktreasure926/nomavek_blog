@@ -9,6 +9,17 @@
   "drafts": [],
   "published": [
     {
+      "slug": "ai-architectural-assistant-2026",
+      "title": "Will AI Replace the Architectural Assistant in 2026?",
+      "date": "2026-06-04",
+      "status": "published",
+      "tags": ["ai-workflow", "architecture-practice", "ai-assistant", "mcp", "novie"],
+      "excerpt": "RTX Spark shows why architecture AI is moving from prompt boxes into assistant work: site modeling, layout tests, tool handoffs, rendering, and human review.",
+      "file": "posts/ai-architectural-assistant-2026.md",
+      "ai-summary": "Explains why AI will reduce the need for traditional architectural assistant work in 2026, using RTX Spark, MCP, RhinoMCP, BIM assistants, space planning, and Nomavek Novie.",
+      "image": "assets/ai-architectural-assistant-2026/ai-assistant-cad-space-planning.png"
+    },
+    {
       "slug": "ai-understand-project-not-prompt",
       "title": "Can an AI Board Remember the Project, Not Just the Prompt?",
       "date": "2026-05-27",
