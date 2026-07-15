@@ -1,32 +1,52 @@
 const articles = [
     {
-        slug: "ai-contracts-beat-prompts",
-        title: "Why Architects Should Treat AI Like a Contract, Not a Prompt",
-        date: "2026-05-14",
-        status: "Draft for review",
-        category: "Workflow Guides",
-        tags: ["AI Workflow", "Architecture Practice", "AEO"],
+        slug: "ai-architectural-assistant-2026",
+        title: "Will AI Replace the Architectural Assistant in 2026?",
+        date: "2026-06-04",
+        status: "Published",
+        category: "AI Practice",
+        tags: ["AI Workflow", "Architecture Practice", "AI Assistant"],
         imageApproved: true,
-        excerpt: "Prompts are fragile. Contracts are durable. Here is a practical way to brief AI so your studio gets consistent outputs across a project.",
-        image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
-        imageLayout: "portrait",
-        quickAnswer: "If AI results change wildly from day to day, the problem is usually not the tool. It is the brief. Treat the AI task like a small contract: inputs, outputs, constraints, and checkpoints.",
+        excerpt: "AI is moving from prompt boxes into CAD, BIM, Rhino, and space-planning workflows. The role most exposed in 2026 is the repetitive production assistant layer.",
+        image: "docs/approvals/2026-06-04-ai-architectural-assistant-2026/ai-assistant-cad-space-planning.png",
+        imageLayout: "landscape",
+        quickAnswer: "AI will not replace the architect in 2026, but it can replace parts of the architectural assistant role: repetitive model queries, early option studies, space-planning tests, board preparation, and documentation searches.",
         body: [
-            { type: "h2", text: "What Goes Wrong With Prompt-Only Work" },
-            { type: "p", text: "Most architects start with loose requests like make this render more premium, make it more Japanese minimal, or try a warmer afternoon light. These can work once, but they drift over time because the reference set changes, the team changes, and nobody remembers which decisions were already locked." },
-            { type: "h2", text: "A Simple Contract Structure" },
-            { type: "p", text: "Think of this as a one-page agreement between you and the AI. It does not need legal language. It needs clear project boundaries." },
-            { type: "h3", text: "1. Inputs" },
-            { type: "list", items: ["Base images: massing, clay render, or site photo", "Context: location, climate, usage", "References: 3 to 8 images max", "View list: exterior hero, courtyard, lobby, or selected frames"] },
-            { type: "h3", text: "2. Outputs" },
-            { type: "list", items: ["3 variations with distinct directions", "1 safe option and 2 stretch options", "One-sentence intent caption per image"] },
-            { type: "h3", text: "3. Constraints" },
-            { type: "list", items: ["Keep massing unchanged", "Keep camera angle unchanged", "Keep program cues readable", "Avoid fake signage or random foreground people"] },
-            { type: "h2", text: "The Two Locks Rule" },
-            { type: "p", text: "Two locks prevent most wasted cycles: lock the camera, then lock the material direction. Once those are fixed, iteration becomes useful instead of chaotic." },
-            { type: "code", text: "AI BRIEF CONTRACT\n\nGoal:\n- [One sentence: what this image must communicate]\n\nInputs:\n- Base image(s):\n- References, max 8:\n- View list:\n\nOutputs:\n- Provide 3 variations: Safe / Stretch A / Stretch B\n- Provide 1-sentence intent caption per variation\n\nConstraints:\n- Camera:\n- Massing:\n- Program cues:\n- Materials to avoid:\n\nCheckpoints:\n- A: Choose direction, 1 only\n- B: Lock materials and lighting\n- C: Detail refinement only" },
-            { type: "h2", text: "Nomavek Takeaway" },
-            { type: "p", text: "This is why Nomavek treats the board as the product. A good AI workflow is not only the generated image. It is the locked brief, visible decisions, and a client-ready explanation of why one direction is stronger than another." }
+            { type: "h2", text: "Why 2026 Feels Different" },
+            { type: "p", text: "Architecture AI is moving out of the loose prompt box. The new direction is AI that can read project material, call tools, search model data, generate first tests, and prepare options for review." },
+            { type: "h2", text: "The Assistant Work That AI Can Take First" },
+            { type: "list", items: ["Model and drawing search", "Option setup", "Space-planning tests", "Board preparation", "Documentation support", "Rhino or Grasshopper automation"] },
+            { type: "h2", text: "Tool Connection Is The Big Change" },
+            { type: "p", text: "MCP lets AI applications connect to external tools through servers that expose actions, data, and reusable prompts. Codex can connect to MCP servers, and RhinoMCP-style experiments show how AI can inspect or act on model data instead of only writing text." },
+            { type: "h2", text: "Space Planning Is Another Assistant Layer" },
+            { type: "p", text: "AI space-planning tools can already generate early layout alternatives from project requirements. That does not remove human review. It changes the first pass: the assistant prepares options, and the architect checks fit, logic, compliance, and client judgment." },
+            { type: "h2", text: "Nomavek Lab Takeaway" },
+            { type: "p", text: "The target is not an AI pretending to be an architect. The target is a board workflow where AI acts like a fast architectural assistant: organize the brief, create options, keep project memory visible, and leave the decision to the architect." }
+        ]
+    },
+    {
+        slug: "project-memory-demo-entry",
+        title: "Project Memory Is the Missing Layer in Architecture AI",
+        date: "2026-06-02",
+        status: "Published",
+        category: "Workflow Guides",
+        tags: ["AI Workflow", "Architecture Practice", "Project Memory"],
+        imageApproved: true,
+        excerpt: "AI image tools can create options quickly, but small studios need a workflow that remembers the reference, constraints, selected direction, and next design question.",
+        image: "docs/approvals/2026-06-02-project-memory-demo-entry/project-memory-demo-board-ui.png",
+        imageLayout: "landscape",
+        quickAnswer: "Most AI image workflows stop after one output. Architecture work needs project memory: reference, output, constraints, decision, and next move kept together so the studio can continue from the last decision.",
+        body: [
+            { type: "h2", text: "The Image Is Not The Whole Project" },
+            { type: "p", text: "A generated render can look convincing and still be difficult to use. The problem is not only image quality. The surrounding project logic often disappears: what reference started the direction, what constraint shaped the option, which image was selected, and what still needs to be tested." },
+            { type: "h2", text: "What Project Memory Should Keep Visible" },
+            { type: "list", items: ["Reference: the image, sketch, site photo, or direction that started the work", "Output: the AI-generated option or board that came from it", "Constraints: height, program, visual language, site condition, or client preference", "Decision: what the studio selected, rejected, or still needs to compare", "Next move: generate another option, make a diagram, refine the facade, or prepare a cleaner board"] },
+            { type: "h2", text: "Why This Matters For AI Architecture Tools" },
+            { type: "p", text: "Many AI tools are still built around a single prompt or a single image. That is useful for fast exploration, but architecture practice usually moves through a chain: reference, option, review, decision, next version, presentation." },
+            { type: "h2", text: "Where Nomavek Is Going" },
+            { type: "p", text: "Nomavek is being shaped around a project-memory workflow for small studios: upload a reference or brief, generate options, keep constraints and notes beside the output, mark a selected direction, and prepare the next board or design step." },
+            { type: "h2", text: "Takeaway" },
+            { type: "p", text: "Better images are useful. But for architecture work, the bigger shift is project memory: a workflow that remembers why an image exists, what it should become, and what decision comes next." }
         ]
     },
     {
@@ -90,27 +110,6 @@ const articles = [
     }
 ];
 
-const relatedPosts = [
-    {
-        meta: "Instagram seed / May 5, 2026",
-        title: "For freelancer architects and small studios",
-        text: "The first bridge from the Nomavek Instagram post: start with one project image, one design question, and one board instead of chasing another prompt trick.",
-        href: "https://www.instagram.com/p/DX9ooGUFIMG/",
-        linkText: "View seed post",
-        image: "https://www.nomavek.com/landing/nomavek-east-asia-sketch.png",
-        alt: "Sketch image candidate for small studio AI workflow note"
-    },
-    {
-        meta: "Related post / Draft",
-        title: "What small studios should ask before adopting AI tools",
-        text: "Does the tool help you decide, or only help you generate? That question should shape the blog, Instagram, and the demo board direction.",
-        href: "#article/ai-contracts-beat-prompts",
-        linkText: "Read the draft direction",
-        image: "https://www.nomavek.com/landing/nomavek-east-asia-detail.png",
-        alt: "Facade detail image candidate for AI adoption related post"
-    }
-];
-
 const topics = [
     ["AI Design Tools", "Which tools matter, when they matter, and what they change in practice."],
     ["Rendering & Visualization", "From fast outputs to consistent image sets and client-facing boards."],
@@ -166,17 +165,6 @@ function renderHome() {
     const featured = visibleArticles[0];
     app.innerHTML = `
         <div class="page-shell">
-            <section class="hero" id="home">
-                <div class="hero-copy">
-                    <h1>Nomavek Blog</h1>
-                    <p class="hero-summary">Practical notes on AI tools, architectural design work, visualization, client presentation, and small studio workflows.</p>
-                    <div class="hero-actions">
-                        <a class="button" href="#latest-blog">View latest blog</a>
-                        <a class="button secondary" href="https://www.nomavek.com/#cowork-board">View demo board</a>
-                    </div>
-                </div>
-            </section>
-
             <section class="section latest-section" id="latest-blog" aria-labelledby="latest-title">
                 <div class="section-title">
                     <h2 id="latest-title">Latest blog</h2>
@@ -195,16 +183,6 @@ function renderHome() {
                 </div>
                 <div class="topic-grid">
                     ${topics.map(([title, text]) => `<div class="topic-card"><strong>${title}</strong><span>${text}</span></div>`).join("")}
-                </div>
-            </section>
-
-            <section class="section" id="related-posts" aria-labelledby="related-title">
-                <div class="section-title">
-                    <h2 id="related-title">Related posts</h2>
-                    <p>Short posts connected to Instagram, demos, and deeper blog articles.</p>
-                </div>
-                <div class="field-layout">
-                    ${relatedPosts.map(renderRelatedPost).join("")}
                 </div>
             </section>
 
@@ -265,7 +243,7 @@ function renderArticleMarkup(article, template, options = {}) {
     const cta = getTemplateCta(template);
     return `
         <article class="article-view">
-            ${options.preview ? "" : `<a class="text-link back-link" href="#home">Back to blog</a>`}
+            ${options.preview ? "" : `<a class="text-link back-link" href="#latest-blog">Back to blog</a>`}
             ${renderMeta(article)}
             <h1>${article.title}</h1>
             <div class="article-actions ${template.statusVisibility === "hide" ? "is-hidden" : ""}">
@@ -287,7 +265,7 @@ function renderArticleMarkup(article, template, options = {}) {
                     <p>${cta.body}</p>
                     <div class="cta-actions">
                         <a class="button" href="${cta.primaryHref}">${cta.primaryLabel}</a>
-                        <a class="button secondary" href="#home">Read more blog</a>
+                        <a class="button secondary" href="#latest-blog">Read more blog</a>
                     </div>
                 </div>
                 <div class="cta-note">${cta.note}</div>
@@ -303,7 +281,7 @@ function renderTemplateConsole() {
         <section class="template-console">
             <div class="template-header">
                 <div>
-                    <a class="text-link back-link" href="#home">Back to blog</a>
+                    <a class="text-link back-link" href="#latest-blog">Back to blog</a>
                     <h1>Blog Template Console</h1>
                     <p>This review-only screen controls the shared single-post template. Change the template once and every article page uses the same layout rules in this browser preview.</p>
                 </div>
@@ -368,18 +346,6 @@ function bindTemplateConsole() {
             renderTemplateConsole();
         });
     }
-}
-
-function renderRelatedPost(note) {
-    return `
-        <article class="field-note">
-            ${renderImage(note.image, note.alt, "field-image-wrap")}
-            <div class="meta">${note.meta}</div>
-            <h3>${note.title}</h3>
-            <p>${note.text}</p>
-            <a class="text-link" href="${note.href}">${note.linkText}</a>
-        </article>
-    `;
 }
 
 function renderMeta(article) {
@@ -488,7 +454,7 @@ function escapeHtml(value) {
 }
 
 function route() {
-    const hash = window.location.hash || "#home";
+    const hash = window.location.hash || "#latest-blog";
     if (hash.startsWith("#article/")) {
         renderArticle(hash.replace("#article/", ""));
     } else if (hash === "#template-console") {
@@ -496,7 +462,14 @@ function route() {
     } else {
         renderHome();
     }
-    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+    requestAnimationFrame(() => {
+        const target = document.querySelector(hash);
+        if (target && hash.startsWith("#") && hash !== "#template-console") {
+            target.scrollIntoView({ block: "start", behavior: "auto" });
+            return;
+        }
+        window.scrollTo({ top: 0, behavior: "auto" });
+    });
 }
 
 window.addEventListener("hashchange", route);
